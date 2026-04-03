@@ -526,49 +526,7 @@ alt="New CRM dashboard">
 </div>
 
 </section>
-<!-- IMPACT GRID -->
 
-<section class="insights-table" data-aos="fade-up">
-
-<div class="table-header">
-  <h2>Impact & Learnings</h2>
-</div>
-
-<div class="table-grid">
-
-  <!-- IMPACT -->
-  <div class="table-col">
-    <h3>Impact</h3>
-    <ul>
-      <li>Reduced friction in daily workflows</li>
-      <li>Centralized lead management</li>
-      <li>Improved decision-making clarity</li>
-    </ul>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="table-col">
-    <h3>Results</h3>
-    <ul>
-      <li>Scalable CRM system introduced</li>
-      <li>Reduced dependency on Excel</li>
-      <li>Streamlined follow-up tracking</li>
-    </ul>
-  </div>
-
-  <!-- LEARNINGS -->
-  <div class="table-col">
-    <h3>Learnings</h3>
-    <ul>
-      <li>Designing with mental models improves adoption</li>
-      <li>Small UX gaps reveal big opportunities</li>
-      <li>Balance familiarity with innovation</li>
-    </ul>
-  </div>
-
-</div>
-
-</section>
 
 <section class="user-journey">
 
@@ -772,7 +730,8 @@ lottie.loadAnimation({
     <!-- STEP 1 -->
     <div class="deep-row">
       <div class="deep-text">
-        <p>Select car brand and model within the same flow.</p>
+        <p>Users begin by selecting a car brand within the “Add Lead” flow, without navigating away. 
+This ensures continuity and prevents disruption in data entry.</p>
       </div>
       <div class="deep-img">
         <img src="../../assets/images/CRM/car-brand1.png" alt="">
@@ -783,11 +742,13 @@ lottie.loadAnimation({
     <div class="deep-row reverse">
       <div class="deep-text">
         <p>
-          An overlay keeps users in context instead of navigating away.
+          Once a brand is selected, an accordion pattern dynamically reveals the associated models. 
+This avoids overwhelming users with a long, unstructured list and allows them to focus only 
+on relevant options.
         </p>
       </div>
       <div class="deep-img">
-        <img src="../../assets/images/CRM/brand-model-2.jpg" alt="">
+        <img src="../../assets/images/CRM/car2.png" alt="">
       </div>
     </div>
 
@@ -795,19 +756,20 @@ lottie.loadAnimation({
     <div class="deep-row">
       <div class="deep-text">
         <p>
-          Selecting a brand dynamically reveals models, reducing decision friction.
+          Once the model is selected, the interface collapses back to a clean state, confirming the selection while keeping the user focused on the next steps in the lead capture process.
         </p>
       </div>
       <div class="deep-img">
-        <img src="../../assets/images/CRM/brand-model-3.jpg" alt="">
+        <img src="../../assets/images/CRM/car3.png" alt="">
       </div>
     </div>
 
     <!-- INSIGHT -->
     <div class="deep-insight">
       <p>
-        This reduces cognitive load compared to Excel, where users must remember 
-        brand-model relationships or manually search across scattered data.
+        Compared to Excel-based workflows, where users must remember or manually search for 
+brand-model mappings, this interaction shifts the cognitive burden from the user to the system. 
+By guiding selection contextually, it reduces errors and speeds up data entry.
       </p>
 
       <div class="deep-comparison">
@@ -827,7 +789,49 @@ lottie.loadAnimation({
 
 </section>
   
+<!-- IMPACT GRID -->
 
+<section class="insights-table" data-aos="fade-up">
+
+<div class="table-header">
+  <h2>Impact & Learnings</h2>
+</div>
+
+<div class="table-grid">
+
+  <!-- IMPACT -->
+  <div class="table-col">
+    <h3>Impact</h3>
+    <ul>
+      <li>Reduced friction in daily workflows</li>
+      <li>Centralized lead management</li>
+      <li>Improved decision-making clarity</li>
+    </ul>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="table-col">
+    <h3>Results</h3>
+    <ul>
+      <li>Scalable CRM system introduced</li>
+      <li>Reduced dependency on Excel</li>
+      <li>Streamlined follow-up tracking</li>
+    </ul>
+  </div>
+
+  <!-- LEARNINGS -->
+  <div class="table-col">
+    <h3>Learnings</h3>
+    <ul>
+      <li>Designing with mental models improves adoption</li>
+      <li>Small UX gaps reveal big opportunities</li>
+      <li>Balance familiarity with innovation</li>
+    </ul>
+  </div>
+
+</div>
+
+</section>
 <script src="./script.js"></script>
 </body>
 </html>
