@@ -48,6 +48,11 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 /* Glass nav (Copied from home screen) */
 .nav {
     position: absolute;
@@ -193,8 +198,87 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* optional: add built-in padding so it never hugs the strict border lines */
+     
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.max-w-lg { max-width: 600px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-main { margin-bottom: 2rem; }
+.text-center { text-align: center; }
+
+/* Vertical Stepper */
+.stepper-container {
+    position: relative;
+    padding-left: 3rem;  /* Pushes content away from the vertical line */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stepper-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--line-color);
+}
+
+.step-item {
+    position: relative;
+    width: 100%;
+}
+
+.step-node {
+    position: absolute;
+    left: calc(-3rem - 4.5px); /* centers a 9px box perfectly on the 1px center line */
+    top: 2.2rem; 
+    width: 9px;
+    height: 9px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--line-color);
+}
+
+.step-card {
+    border: 1px solid var(--line-color);
+    padding: 2rem;
+    background-color: var(--bg-color);
+}
+
+.step-tags {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: #475569;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
-    .grid-container {
+    .grid-container, .grid-3-cols {
         grid-template-columns: 1fr;
     }
     .border-right {
