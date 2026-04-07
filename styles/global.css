@@ -132,6 +132,7 @@ main {
   display: flex;
   align-items: center;
   gap: 40px;
+  width: 100%;
 }
 
 .nav-link {
@@ -154,6 +155,7 @@ main {
   background: var(--action-bg);
   color: var(--action-text);
   border: 1px solid transparent;
+  margin-left: auto;
 }
 
 .nav-cta:hover {
@@ -535,72 +537,82 @@ main {
 }
 
 
-/* About Section */
+/* Minimalist Pill About Section */
 .about-section {
-  padding: 120px 0;
-}
-
-.about-container {
-  padding: 60px;
+  padding: 120px 0 60px;
   display: flex;
-  gap: 60px;
-  align-items: center;
+  justify-content: center;
 }
 
-.about-image {
+.about-pill-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-minimalist-pill {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 720px;
+  padding: 24px 32px 24px 28px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+  transition: transform 0.4s ease;
+}
+
+.about-minimalist-pill:hover {
+  transform: translateY(-4px);
+}
+
+.about-pill-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   flex-shrink: 0;
 }
 
-.about-image img {
-  width: 280px;
-  height: 340px;
+.about-pill-avatar img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 140px 140px 24px 24px;
-  border: 4px solid #ffffff;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.about-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 24px;
+.about-pill-text {
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
 }
 
-.about-content p {
+.about-pill-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.about-pill-resume {
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-.about-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 36px;
-}
-
-.resume-btn {
-  background: var(--action-bg);
-  color: var(--action-text);
-  padding: 14px 28px;
-  border-radius: 999px;
+  text-decoration: none;
   font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(15, 23, 42, 0.05);
   transition: all 0.3s ease;
-  display: inline-flex;
 }
 
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.4);
+.about-pill-resume:hover {
+  background: rgba(255, 255, 255, 0.9);
   color: var(--text-dark);
-  border: 1px solid var(--glass-border);
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: inline-flex;
-}
-
-.btn-ghost:hover {
-  background: #ffffff;
 }
 
 /* Learning / Capabilities */
@@ -782,6 +794,10 @@ main {
     padding: 12px;
     text-align: left;
     justify-content: flex-start;
+  }
+  .nav-links .nav-cta {
+    margin-left: 0;
+    justify-content: center;
   }
   .nav-links .dropdown-menu {
     position: static;

@@ -80,6 +80,7 @@ body {
     align-items: center;
     gap: 68px;
     list-style: none; /* Just in case */
+    width: 100%;
 }
 
 .nav-link {
@@ -105,6 +106,7 @@ body {
     color: #ffffff;
     border: 1px solid transparent;
     box-shadow: none;
+    margin-left: auto;
 }
 
 .nav-cta:hover {

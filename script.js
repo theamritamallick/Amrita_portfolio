@@ -125,3 +125,68 @@ if (mobileMenuBtn && navLinksGroup) {
     });
   });
 }
+
+// 3D Starfield Background Animation
+const starCanvas = document.getElementById('starfield');
+if (starCanvas) {
+  const ctx = starCanvas.getContext('2d');
+  let w, h;
+  let stars = [];
+  const numStars = 1200; 
+  const speed = 1.5; 
+
+  const resize = () => {
+    w = starCanvas.parentElement.offsetWidth;
+    h = starCanvas.parentElement.offsetHeight;
+    starCanvas.width = w;
+    starCanvas.height = h;
+  };
+
+  const initStars = () => {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * 2000 - 1000,
+        y: Math.random() * 2000 - 1000,
+        z: Math.random() * 2000,
+        radius: Math.random() * 1.5 + 0.5
+      });
+    }
+  };
+
+  const drawStars = () => {
+    ctx.clearRect(0, 0, w, h);
+    const cx = w / 2;
+    const cy = h / 2;
+
+    stars.forEach(star => {
+      star.z -= speed;
+      if (star.z <= 0) {
+        star.z = 2000;
+        star.x = Math.random() * 2000 - 1000;
+        star.y = Math.random() * 2000 - 1000;
+      }
+
+      const px = cx + (star.x * 400) / star.z;
+      const py = cy + (star.y * 400) / star.z;
+      
+      const scale = 2000 / star.z;
+      const size = star.radius * scale * 0.15;
+      const opacity = Math.min(1, 1 - (star.z / 2000));
+
+      if (px > 0 && px < w && py > 0 && py < h) {
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(10, 15, 30, ${opacity})`;
+        ctx.arc(px, py, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+
+    requestAnimationFrame(drawStars);
+  };
+
+  window.addEventListener('resize', resize);
+  resize();
+  initStars();
+  drawStars();
+}

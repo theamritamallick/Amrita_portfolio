@@ -151,30 +151,31 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-      <div class="about-container glass-panel">
-        <div class="about-image">
-          <img src="assets/images/Amrita.png" alt="Amrita Mallick">
-        </div>
-        <div class="about-content">
-          <h2>Hi, I’m Amrita</h2>
-          <p>
-            I’m a UI/UX Designer with a growing focus on UX engineering—bridging design and code to craft thoughtful, high-performance digital experiences.
-          </p>
-          <p>
-            I specialize in simplifying complex systems, with experience in banking SaaS and enterprise products. My approach combines usability, clarity, and pixel-level precision, heavily inspired by modern interface aesthetics.
-          </p>
-          <p>
-            Currently building and coding my own portfolio while exploring advanced frontend and interaction design. Let’s build calm, intuitive products together.
-          </p>
-          <div class="about-actions">
-            <a href="Amrita_Mallick_UX_Designer_Resume.pdf" download target="_blank" class="resume-btn">Download Resume</a>
-            <a href="mailto:amritamallick00@gmail.com" class="btn-ghost">Contact Me</a>
+    <!-- Universe Background Wrapper -->
+    <div id="universe-wrap" style="position: relative; overflow: hidden;">
+      <canvas id="starfield" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.6; z-index: 0;"></canvas>
+      
+      <!-- Content Overlay -->
+      <div style="position: relative; z-index: 1;">
+      
+        <!-- About Section -->
+        <section class="about-section">
+          <div class="about-pill-wrapper">
+            <div class="about-minimalist-pill glass-panel reveal">
+              <div class="about-pill-avatar">
+                <img src="assets/images/Amrita.png" alt="Amrita Mallick">
+              </div>
+              <div class="about-pill-text">
+                <span style="display: block; font-size: 1.15rem; margin-bottom: 4px;"><strong>Hi, I am Amrita. 👋</strong></span>
+                I’m a UI/UX Designer bridging <strong>design systems</strong> with <strong>frontend engineering</strong>. 
+                I specialize in reducing cognitive load across complex enterprise and SaaS workflows 
+                to craft calm, high-performance digital experiences.
+              </div>
+            </div>
+            
+            <a href="Amrita_Mallick_UX_Designer_Resume.pdf" download target="_blank" class="about-pill-resume reveal delay-1">Download Resume ↓</a>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
     <!-- Learning Section -->
     <section class="learning-section" id="learning">
@@ -213,6 +214,9 @@
         </div>
       </div>
     </section>
+
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
