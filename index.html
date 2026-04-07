@@ -1,280 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amrita | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../styles/global.css">
-  </head>
-  <body>
-    <div class="page-bg"></div>
-<section class="hero-wrapper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amrita | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles/global.css">
+</head>
+<body>
 
-  <div class="hero-card">
-     <header class="nav">
-      <div class="nav-inner">
+  <!-- Calming Bright Background -->
+  <div class="page-bg"></div>
 
+  <!-- Hero Section -->
+  <section class="hero-wrapper">
+    <!-- Animated 3D/Dotted Background -->
+    <div class="hero-bg-anim">
+      <div class="hero-dotted-wave"></div>
+      <div class="hero-3d-sphere"></div>
+    </div>
+    <!-- Navigation (Pill-shaped Light Glass) -->
+    <header class="nav">
+      <div class="nav-inner glass-panel">
         <nav class="nav-links">
-           <a href="/index.html" class="nav-link">Home</a>
+          <a href="/index.html" class="nav-link">Home</a>
           <div class="dropdown">
-           <a href="#projects" class="nav-link">Projects</a>
-           
-
-<ul class="dropdown-menu">
-<li><a href="/case-studies/Home Mechanic-CRM SAAS/">CRM SAAS</a></li>
-<li><a href="/case-studies/ICICI-CIB-Banking SAAS/">ICICI CIB Banking SAAS</a></li>
-<li><a href="/case-studies/ICICI design system/">ICICI design system</a></li>
-          </ul>
-
-</div>
+            <a href="#projects" class="nav-link">Projects</a>
+            <ul class="dropdown-menu glass-panel">
+              <li><a href="/case-studies/Home Mechanic-CRM SAAS/">CRM SAAS</a></li>
+              <li><a href="/case-studies/ICICI-CIB-Banking SAAS/">ICICI CIB Banking SAAS</a></li>
+              <li><a href="/case-studies/ICICI design system/">ICICI design system</a></li>
+            </ul>
+          </div>
           <a href="#learning" class="nav-link">Learning</a>
           <a href="mailto:amritamallick00@gmail.com" class="nav-link nav-cta">Contact me</a>
         </nav>
       </div>
     </header>
 
-
-
-    <main>
-      <section class="hero">
-        <div class="hero-banner">
-          <div class="hero-animation-wrapper hero-animation-wrapper--full">
-            <div class="hero-animation hero-animation--wide">
-              <div class="shadow-figure shadow-figure--top"></div>
-              <div class="shadow-figure shadow-figure--bottom"></div>
-            </div>
-            <div class="hero-orbit hero-orbit--1"></div>
-            <div class="hero-orbit hero-orbit--2"></div>
-            <div class="hero-orbit hero-orbit--3"></div>
-
-            <div class="hero-overlay">
-              <div class="hero-content hero-content--overlay">
-               <!-- HERO CONTENT -->
-    <div class="hero-content">
-      <p class="hero-tag">UX Designer &amp; Developer</p>
-      <h2 class="hero-title">
-        Hi, I am <I>Amrita</I>.
-      </h2>
-     <h1 class="reveal-text">
-  <span>I design with clarity to reduce</span><br>
-  <span>cognitive load in complex systems</span>
-</h1>
-
-      <p class="reveal-text delay-1">
-  Crafting calm, intuitive digital experiences for fintech and enterprise products.
-  
-</p>
-<div>
-     <p class="reveal-text delay-2">
-Scroll down to explore my work and process.
-     </p> 
+    <!-- Floating Prompt / Intro Text with Delay Apperance -->
+    <div class="hero-content-text">
+      <p class="hero-tag reveal-txt" style="animation-delay: 1.0s;">UX Designer & Developer</p>
+      <h2 class="reveal-txt" style="animation-delay: 1.3s;">Hi, I am Amrita.</h2>
+      <h1 class="reveal-txt" style="animation-delay: 1.6s;">
+        I design with clarity to reduce<br>
+        cognitive load in complex systems
+      </h1>
+      <p class="reveal-txt" style="animation-delay: 1.9s;">gi
+        Scroll down to explore my work and process.
+      </p>
     </div>
- <!-- SCROLL INDICATOR INSIDE CARD -->
+
+    <!-- Scroll Indicator -->
     <div class="scroll-indicator">
       <span></span>
     </div>
-    </div>
+  </section>
 
-              
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-        </section>
+  <main>
+    <!-- Selected Works -->
+    <section class="selected-work" id="projects">
+      <h1 class="section-title">Selected Work</h1>
 
-        <section class="selected-work" id="selected-work">
+      <div class="selected-work-layout">
+        <aside class="selected-work-stepper" aria-label="Case studies navigator">
+          <button type="button" class="stepper-item is-active" data-target="case-home-mechanic">Home Mechanic CRM</button>
+          <button type="button" class="stepper-item" data-target="case-icici-cib">ICICI - Corporate Banking</button>
+        </aside>
 
-  <h1 class="section-title"><I>Selected Work</I></h1>
-
-  <div class="selected-work-layout">
-    <aside class="selected-work-stepper" aria-label="Case studies navigator">
-      <button type="button" class="stepper-item is-active" data-target="case-home-mechanic">Home Mechanic CRM dashboard</button>
-      <button type="button" class="stepper-item" data-target="case-icici-cib">ICICI - Corporate Internet Banking</button>
-     
-      
-    </aside>
-
-    <div class="selected-work-list">
-      <!-- PROJECT 1 -->
-      <article class="selected-work-card reveal" id="case-home-mechanic">
-        <div class="bento-grid">
-          <div class="bento bento-a">
-            <img src="assets/images/Mockup_crm.png" alt="CRM dashboard overview mockup" loading="lazy" decoding="async" />
-          </div>
-          <div class="bento bento-b">
-            <img src="assets/images/CRM/date-range.png" alt="CRM dashboard detail screen" loading="lazy" decoding="async" />
-          </div>
-          <div class="bento bento-c">
-            <img src="assets/images/CRM/add-lead.png" alt="CRM interface mockup" loading="lazy" decoding="async" />
-          </div>
-          <div class="bento bento-d">
-            <img src="assets/images/decision-3.png" alt="CRM workflow snapshot" loading="lazy" decoding="async" />
-          </div>
-          <div class="bento bento-e">
-            <img src="assets/images/CRM/car-brand.png" alt="Spreadsheet workflow before the CRM" loading="lazy" decoding="async" />
-          </div>
-        </div>
-
-        <div class="project-content">
-          <h3>Home Mechanic CRM</h3>
-          <div>
-          <ul>
-          <li><p>Solo Designer</p></li>
-          <li><p>Designed a CRM system to streamline lead management and improve follow-up efficiency for service teams.</p></li></ul></div>
-          <div class="project-metrics">
-            <div class="metric">
-              <span>↓ 40%</span>
-              <p>Time spent on manual tracking</p>
-            </div>
-            <div class="metric">
-              <span>↑ 2x</span>
-              <p>Faster follow-up</p>
-            </div>
-            <div class="metric">
-              <span>+ Improved</span>
-              <p>Visibility across lifecycle</p>
-            </div>
-          </div>
-          <a href="case-studies/Home Mechanic-CRM SAAS/index.html" class="project-btn">View Case Study</a>
-        </div>
-      </article>
-
-      <!-- PROJECT 2 -->
-      <article class="selected-work-card reveal" id="case-icici-cib">
-        <div class="bento-grid">
-          <div class="bento bento-a"><img src="assets/images/CIB/FD.png" alt="Corporate internet banking dashboard overview" loading="lazy" decoding="async" /></div>
-          <div class="bento bento-b"><img src="assets/images/CIB/FD-success.png" alt="Corporate internet banking module detail" loading="lazy" decoding="async" /></div>
-          <div class="bento bento-c"><img src="assets/images/CIB/FD-dashboard.png" alt="Corporate banking workflow interface" loading="lazy" decoding="async" /></div>
-          <div class="bento bento-d"><img src="assets/images/CIB/Close-FD.png" alt="User flow from authentication to transaction" loading="lazy" decoding="async" /></div>
-          <div class="bento bento-e"><img src="assets/images/CIB/Share-FD.png" alt="Legacy process replaced by product flow" loading="lazy" decoding="async" /></div>
-        </div>
-        <div class="project-content">
-          <h3>ICICI Corporate Internet Banking</h3>
-          <div>
-          <ul>
-          <li><p>Designed approval workflows for multi-level authorization, increasing visibility and control in decision-making</p></li>
-          <li><p>Enabled cross-sell journeys such as overdraft against FD, improving product discoverability within the platform.</p></li></ul></div>
-          <div class="project-metrics">
-            <div class="metric"><span>↓ 20%</span><p>Improved flow clarity across multi-step journeys</p></div>
-            <div class="metric"><span>↑ 2x</span><p>Minimized user errors through clearer validation</p></div>
-            <div class="metric"><span>+ Improved</span><p>Upselling of Overdrafts</p></div>
-          </div>
-          <a href="case-studies/ICICI-CIB-Banking SAAS/index.html" class="project-btn">View Case Study</a>
-        </div>
-      </article>
-
-      
-
-      
-
-      
-    </div>
-  </div>
-
-</section>
-
-<section class="about-section">
-  <div class="about-container">
-
-    <div class="about-image">
-      <img src="../assets/images/Amrita.png" alt="Amrita">
-    </div>
-
-    <div class="about-content">
-      <h2>Hi, I’m Amrita</h2>
-
-      <p>
-        I’m a UI/UX Designer with a growing focus on UX engineering—bridging design and code to craft thoughtful, high-performance digital experiences.
-      </p>
-
-      <p>
-        I specialize in simplifying complex systems, with experience in banking SaaS and enterprise products. My approach combines usability, clarity, and pixel-level precision.
-      </p>
-
-      <p>
-        Currently building and coding my own portfolio while exploring advanced frontend and interaction design.
-      </p>
-
-      <p>
-        Let’s build calm, intuitive products together.
-      </p>
-<div class="about-actions">
-      <a href="Amrita_Mallick_UX_Designer_Resume.pdf" download target="_blank" class="resume-btn">Download my Resume</a>
-      <a href="mailto:amritamallick00@gmail.com" class="btn btn-ghost"> Contact Me
-  </a>
-</div>
-    </div>
-
-  </div>
-</section>
-
-    <section class="learning-section">
-  <div class="learning-container">
-
-    <div class="learning-header">
-      <h2>Capabilities I’m Building</h2>
-      <p>
-        Blending design thinking with frontend execution to create
-        production-ready, scalable user experiences.
-      </p>
-    </div>
-
-    <div class="learning-grid">
-
-      <div class="learning-card">
-        <h3>Systems Thinking</h3>
-        <h3><I>Designing for scale, consistency, and long-term usability</I></h3>
-        
-        <ul>
-          <li>Design systems</li>
-          <li>Component-based design</li>
-          <li>Scalable UI patterns</li>
-        </ul>
-      </div>
-
-      <div class="learning-card">
-        <h3>UX Engineering</h3>
-        <h3><I>Built and coded this portfolio from scratch</I></h3>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>Responsive design</li>
-          <li>React fundamentals</li>
-        </ul>
-      </div>
-
-      <div class="learning-card">
-        <h3>Product Thinking</h3>
-        <h3><I>Designing complete product journeys—from problem to impact.</I></h3>
-        <ul>
-          <li>User flows & journeys</li>
-          <li>Problem framing</li>
-          <li>Fintech & enterprise UX</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
-</section> 
-
-     
-
-      
+        <div class="selected-work-list">
           
-    </main>
+          <!-- PROJECT 1 -->
+          <article class="selected-work-card glass-panel" id="case-home-mechanic">
+            <div class="bento-grid">
+              <div class="bento"><img src="assets/images/Mockup_crm.png" alt="CRM Overview" loading="lazy" /></div>
+              <div class="bento"><img src="assets/images/CRM/date-range.png" alt="Detail Screen" loading="lazy" /></div>
+              <div class="bento"><img src="assets/images/CRM/add-lead.png" alt="CRM Interface" loading="lazy" /></div>
+            </div>
 
-    <footer class="footer">
-      <p>© <span id="year"></span> Amrita. Built with HTML, CSS, JavaScript and calm details.</p>
-    </footer>
+            <div class="project-content">
+              <h3>Home Mechanic CRM</h3>
+              <ul>
+                <li><strong>Role:</strong> Solo Designer</li>
+                <li>Designed a CRM system to streamline lead management and improve follow-up efficiency.</li>
+              </ul>
+              
+              <div class="project-metrics">
+                <div class="metric">
+                  <span>↓ 40%</span>
+                  <p>Time on manual tracking</p>
+                </div>
+                <div class="metric">
+                  <span>↑ 2x</span>
+                  <p>Faster follow-up</p>
+                </div>
+                <div class="metric">
+                  <span>+ Improved</span>
+                  <p>Pipeline visibility</p>
+                </div>
+              </div>
+              <a href="case-studies/Home Mechanic-CRM SAAS/index.html" class="project-btn">View Case Study</a>
+            </div>
+          </article>
 
-    <script src="./script.js"></script>
-  </body>
+          <!-- PROJECT 2 -->
+          <article class="selected-work-card glass-panel" id="case-icici-cib">
+            <div class="bento-grid">
+              <div class="bento"><img src="assets/images/CIB/FD.png" alt="CIB Dashboard" loading="lazy" /></div>
+              <div class="bento"><img src="assets/images/CIB/FD-success.png" alt="CIB Module" loading="lazy" /></div>
+              <div class="bento"><img src="assets/images/CIB/FD-dashboard.png" alt="CIB Workflow" loading="lazy" /></div>
+            </div>
+
+            <div class="project-content">
+              <h3>ICICI Corporate Banking</h3>
+              <ul>
+                <li>Designed approval workflows for multi-level authorization & decision-making.</li>
+                <li>Enabled cross-sell journeys such as overdraft against FD.</li>
+              </ul>
+              <div class="project-metrics">
+                <div class="metric">
+                  <span>↓ 20%</span>
+                  <p>Flow clarity improvement</p>
+                </div>
+                <div class="metric">
+                  <span>↑ 2x</span>
+                  <p>Error minimization</p>
+                </div>
+                <div class="metric">
+                  <span>+ Improved</span>
+                  <p>Upselling conversion</p>
+                </div>
+              </div>
+              <a href="case-studies/ICICI-CIB-Banking SAAS/index.html" class="project-btn">View Case Study</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-container glass-panel">
+        <div class="about-image">
+          <img src="assets/images/Amrita.png" alt="Amrita Mallick">
+        </div>
+        <div class="about-content">
+          <h2>Hi, I’m Amrita</h2>
+          <p>
+            I’m a UI/UX Designer with a growing focus on UX engineering—bridging design and code to craft thoughtful, high-performance digital experiences.
+          </p>
+          <p>
+            I specialize in simplifying complex systems, with experience in banking SaaS and enterprise products. My approach combines usability, clarity, and pixel-level precision, heavily inspired by modern interface aesthetics.
+          </p>
+          <p>
+            Currently building and coding my own portfolio while exploring advanced frontend and interaction design. Let’s build calm, intuitive products together.
+          </p>
+          <div class="about-actions">
+            <a href="Amrita_Mallick_UX_Designer_Resume.pdf" download target="_blank" class="resume-btn">Download Resume</a>
+            <a href="mailto:amritamallick00@gmail.com" class="btn-ghost">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Section -->
+    <section class="learning-section" id="learning">
+      <div class="learning-header">
+        <h2>Capabilities I’m Building</h2>
+        <p>
+          Blending design thinking with frontend execution to create
+          production-ready, scalable user experiences.
+        </p>
+      </div>
+
+      <div class="learning-grid">
+        <div class="learning-card glass-panel">
+          <h3>Systems Thinking <span>Designing for scale</span></h3>
+          <ul>
+            <li>Design systems architecture</li>
+            <li>Component-based UI logic</li>
+            <li>Scalable interaction patterns</li>
+          </ul>
+        </div>
+        <div class="learning-card glass-panel">
+          <h3>UX Engineering <span>Bridging the gap</span></h3>
+          <ul>
+            <li>Semantic HTML & Modern CSS</li>
+            <li>Fluid Responsive design</li>
+            <li>React & JS fundamentals</li>
+          </ul>
+        </div>
+        <div class="learning-card glass-panel">
+          <h3>Product Thinking <span>End-to-end execution</span></h3>
+          <ul>
+            <li>Comprehensive user journeys</li>
+            <li>Strategic problem framing</li>
+            <li>Fintech & enterprise workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Amrita. Built with HTML, CSS, JavaScript and calm glass details.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
 </html>
-
