@@ -107,3 +107,21 @@ if (stepperItems.length && caseCards.length) {
   caseCards.forEach((card) => caseObserver.observe(card));
   setActiveStep(caseCards[0].id);
 }
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
+const navLinksGroup = document.querySelector('.nav-links');
+
+if (mobileMenuBtn && navLinksGroup) {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    navLinksGroup.classList.toggle('active');
+  });
+  
+  // Close menu when a link is clicked (e.g. Home, Projects, etc.)
+  const links = navLinksGroup.querySelectorAll('.nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinksGroup.classList.remove('active');
+    });
+  });
+}
