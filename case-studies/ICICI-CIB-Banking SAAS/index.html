@@ -55,104 +55,163 @@
         </section>
 
         <!-- How this project was divided & Project Overview -->
-        <section class="section-line-bottom grid-container">
-            <!-- Left Side: Title (Removed border-right to connect it visually to content) -->
-            <div class="px-main py-main flex-col-center">
+        <section class="grid-container">
+            <!-- Left Side: Title -->
+            <div class="border-right px-main py-main flex-col-center" style="justify-content: flex-start;">
                 <div style="width: 100%;">
                     <span class="label-text">(Introduction)</span>
                     <h2 class="display-text">Project<br>Overview</h2>
                 </div>
             </div>
+            
             <!-- Right Side: Content Blocks -->
-            <div class="px-main py-main flex-col-center">
+            <div class="px-main py-main">
                 <p class="body-large mb-main">Corporate Internet Banking (CIB) is a specialized online banking platform tailored for businesses, organizations, and institutions (non-individual customers)</p>
                 <p class="body-large mb-main">It enables companies—from small enterprises to large corporations—to access, manage, and transact on their business accounts securely over the internet, 24/7</p>
-                <p class="body-large">Supports initiator–approver workflows (one user initiates, another approves payments), audit trails, role-based access, 2-factor authentication, and transaction limits for robust security.</p>
-            </div>
-        </section>
+                <p class="body-large mb-main">Supports initiator–approver workflows (one user initiates, another approves payments), audit trails, role-based access, 2-factor authentication, and transaction limits for robust security.</p>
+                
+                <!-- Crisp Difference Section -->
+                <div style="margin-top: 4rem;">
+                    <h3 class="display-text mb-main" style="font-size: 1.5rem;">Difference between Corporate & Retail Internet Banking</h3>
+                    <!-- Removing the border under the heading per user instructions -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <!-- Corporate Column -->
+                        <div style="border-right: 1px solid var(--line-color); padding-right: 2rem;">
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Corporate Internet Banking</h4>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem; margin-bottom: 1rem;"><span style="color: var(--text-color);">001</span> <span>Commercial firms for business purposes</span></p>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem; margin-bottom: 1rem;"><span style="color: var(--text-color);">002</span> <span>Employees share the same account ID and password</span></p>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem;"><span style="color: var(--text-color);">003</span> <span>Transactions require approval workflows to keep corporate funds in check</span></p>
+                        </div>
 
-        <!-- Difference: Corporate vs Retail -->
-        <section class="section-line-bottom">
-            <div class="px-main py-main section-line-bottom">
-                <h2 class="display-text">Difference between Corporate & Retail Internet Banking</h2>
-            </div>
-            
-            <div class="grid-container">
-                <!-- Corporate Column -->
-                <div class="border-right">
-                    <div class="px-main py-sm section-line-bottom">
-                        <h3 class="body-large" style="font-weight: 600;">Corporate Internet Banking</h3>
-                    </div>
-                    <div class="px-main py-main section-line-bottom">
-                        <p class="body-standard">1. Corporate banking is used by commercial firms for business purposes</p>
-                    </div>
-                    <div class="px-main py-main section-line-bottom">
-                        <p class="body-standard">2. Employees of the corporate who deal with the transaction of same account happen to have the same account ID and password.</p>
-                    </div>
-                    <div class="px-main py-main">
-                        <p class="body-standard">3. Bill payment and all financial transactions like Fixed deposit creation goes through approval process and workflows, this is seen as a crucial step for keeping the funds of company in check.</p>
-                    </div>
-                </div>
-
-                <!-- Retail Column -->
-                <div>
-                    <div class="px-main py-sm section-line-bottom">
-                        <h3 class="body-large" style="font-weight: 600;">Retail Internet Banking</h3>
-                    </div>
-                    <div class="px-main py-main section-line-bottom">
-                        <p class="body-standard">1. Net banking is used by individuals for regular, day-to-day transactions</p>
-                    </div>
-                    <div class="px-main py-main section-line-bottom">
-                        <p class="body-standard">2. Every customer who has a bank account happens to have a different ID and a different password</p>
-                    </div>
-                    <div class="px-main py-main">
-                        <p class="body-standard">3. Net banking does not need any approval as only single individual is keeping track of their funds</p>
+                        <!-- Retail Column -->
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Retail Internet Banking</h4>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem; margin-bottom: 1rem;"><span style="color: var(--text-color);">001</span> <span>Individuals for regular, day-to-day transactions</span></p>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem; margin-bottom: 1rem;"><span style="color: var(--text-color);">002</span> <span>Every customer has a different ID and password</span></p>
+                            <p class="body-standard" style="color: var(--text-muted); display: flex; gap: 0.75rem;"><span style="color: var(--text-color);">003</span> <span>Does not need any approval as only a single individual tracks their funds</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 01 Process (Vertical Stepper) -->
-        <section class="section-line-bottom">
-            <!-- Top Section: Title -->
-            <div class="px-main py-main text-center">
-                <span class="label-text">(01)</span>
-                <h2 class="mega-text">Process</h2>
-                <p class="body-large py-sm max-w-lg mx-auto">A structured, stepped approach to bring clarity to the Corporate Internet Banking ecosystem.</p>
+        <!-- Key Modules & Impact Section -->
+        <section class="section-line-bottom grid-container">
+            <!-- Left Side: Context & Image Placeholder -->
+            <div class="border-right" style="display: flex; flex-direction: column; justify-content: flex-start;">
+                <!-- Abstract image placeholder following brutalist language -->
+                <div style="width: 100%; aspect-ratio: 16/9; background-color: rgba(255,255,255,0.02); border-bottom: 1px solid var(--line-color); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="/assets/images/CIB/cib-overview.png" alt="ICICI Corporate Internet Banking Overview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <!-- Corner accent lines for technical feel -->
+                    <div style="position: absolute; bottom:0; left:0; width: 10px; height: 1px; background: var(--text-muted);"></div>
+                    <div style="position: absolute; bottom:0; left:0; width: 1px; height: 10px; background: var(--text-muted);"></div>
+                </div>
+                
+                <div class="px-main" style="width: 100%; padding-bottom: 4rem;">
+                    <h3 class="display-text mb-sm" style="font-size: 1.3rem; line-height: 1.2;">ICICI Corporate Internet Banking (CIB)</h3>
+                    <p class="body-large mb-sm" style="color: var(--text-color); font-weight: 500;">Designing high-stakes financial workflows for enterprise users</p>
+                    <p class="body-standard" style="color: var(--text-muted);">Improved clarity and decision-making across Fixed Deposit (FD) creation, approval, and closure flows in a complex multi-user banking system.</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Modules Grid -->
+            <div class="px-main py-main">
+                <h2 class="display-text mb-sm" style="font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.04em;">Key Modules &<br>Impact</h2>
+                <p class="body-large mb-main" style="color: var(--text-muted);">Worked across multiple high-stakes financial workflows within ICICI Corporate Internet Banking (CIB), focusing on improving clarity, efficiency, and business outcomes.</p>
+                
+                <!-- Modules List with brutalist numbering -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; border-top: 1px solid var(--line-color); padding-top: 3rem;">
+                    
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">01</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Fixed Deposit (FD) Creation — Maker Flow</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Designed a structured, step-by-step flow to reduce ambiguity and prevent high-value input errors, improving clarity in transaction initiation.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">02</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Approval — Maker–Checker / Checker Flow</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Simplified multi-user approval workflows by clearly defining task ownership and status visibility, enabling faster and more confident decision-making.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">03</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure — Maker Flow</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Redesigned closure journeys to reduce friction and guide users through critical financial decisions with better clarity and control.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">04</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure Approval — Multi-role Flow</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Improved approval visibility and reduced confusion in closure workflows across different user roles.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">05</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Cross-Sell: Overdraft (OD) against FD</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Introduced a decision layer during FD closure to offer OD as an alternative, enabling banks to retain funds and support revenue growth.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <span class="body-large" style="color: var(--text-muted); font-family: monospace;">06</span>
+                        <div>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">OD Journey (RBI-Compliant Design)</h4>
+                            <p class="body-standard" style="color: var(--text-muted);">Iterated 13+ times to design a compliant OD experience aligned with RBI guidelines, balancing regulatory constraints with usability.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 01 Process (Horizontal Stepper) -->
+        <section class="section-line-bottom grid-container">
+            <!-- Left Section: Title -->
+            <div class="border-right px-main py-main flex-col-center" style="justify-content: flex-start;">
+                <div style="width: 100%;">
+                    <span class="label-text">(01)</span>
+                    <h2 class="display-text mb-sm">Process</h2>
+                    <p class="body-large" style="color: var(--text-muted); max-width: 400px;">A structured, stepped approach to bring clarity to the Corporate Internet Banking ecosystem.</p>
+                </div>
             </div>
             
-            <!-- Bottom Section: Vertical Stepper -->
-            <div class="px-main py-main" style="max-width: 1000px; margin: 0 auto; padding-top: 6rem; padding-bottom: 6rem;">
-                <div class="stepper-container">
+            <!-- Right Section: Horizontal Stepper -->
+            <div class="px-main py-main flex-col-center" style="justify-content: center;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%;">
                     
                     <!-- Step 1 -->
-                    <div class="step-item">
-                        <div class="step-node"></div>
-                        <div class="step-card">
-                            <h3 class="display-text mb-sm" style="font-size: 2rem;">Discovery</h3>
-                            <p class="body-standard mb-main">We begin by uncovering the core business needs, conducting thorough user research, and establishing a robust design system to define the visual blueprint.</p>
-                            <p class="step-tags">RESEARCH - BRANDING - DESIGN SYSTEM</p>
-                        </div>
+                    <div style="border-top: 1px solid var(--text-color); padding-top: 1.5rem;">
+                        <span class="body-large mb-sm" style="display: block; color: var(--text-color); font-family: monospace;">01</span>
+                        <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Discovery</h3>
+                        <p class="body-standard mb-main" style="color: var(--text-muted);">We begin by uncovering the core business needs, conducting thorough user research, and establishing a robust design system to define the visual blueprint.</p>
+                        <p style="font-size: 0.70rem; letter-spacing: 0.05em; color: var(--text-muted); text-transform: uppercase;">Research - Branding - Design System</p>
                     </div>
                     
                     <!-- Step 2 -->
-                    <div class="step-item">
-                        <div class="step-node"></div>
-                        <div class="step-card">
-                            <h3 class="display-text mb-sm" style="font-size: 2rem;">Design</h3>
-                            <p class="body-standard mb-main">Translating findings into tangible interfaces. We formulate user journeys, architect the information structure, and craft high-fidelity website designs.</p>
-                            <p class="step-tags">CASE SCOPING - USER EXPERIENCE - UI / IA - WEBSITE DESIGN</p>
-                        </div>
+                    <div style="border-top: 1px solid var(--text-color); padding-top: 1.5rem;">
+                        <span class="body-large mb-sm" style="display: block; color: var(--text-color); font-family: monospace;">02</span>
+                        <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Design</h3>
+                        <p class="body-standard mb-main" style="color: var(--text-muted);">Translating findings into tangible interfaces. We formulate user journeys, architect the information structure, and craft high-fidelity website designs.</p>
+                        <p style="font-size: 0.70rem; letter-spacing: 0.05em; color: var(--text-muted); text-transform: uppercase;">User Experience - UI / IA</p>
                     </div>
                     
                     <!-- Step 3 -->
-                    <div class="step-item">
-                        <div class="step-node"></div>
-                        <div class="step-card">
-                            <h3 class="display-text mb-sm" style="font-size: 2rem;">Delivery</h3>
-                            <p class="body-standard mb-main">Finalizing the solution and handing it over to the development team, while incorporating active feedback for rolling iterations.</p>
-                            <p class="step-tags">DELIVERY TO ICICI TEAM - IMPLEMENTATION &amp; ITERATIONS</p>
-                        </div>
+                    <div style="border-top: 1px solid var(--text-color); padding-top: 1.5rem;">
+                        <span class="body-large mb-sm" style="display: block; color: var(--text-color); font-family: monospace;">03</span>
+                        <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Delivery</h3>
+                        <p class="body-standard mb-main" style="color: var(--text-muted);">Finalizing the solution and handing it over to the development team, while incorporating active feedback for rolling iterations.</p>
+                        <p style="font-size: 0.70rem; letter-spacing: 0.05em; color: var(--text-muted); text-transform: uppercase;">Delivery To ICICI Team</p>
                     </div>
 
                 </div>
@@ -169,7 +228,7 @@
             </div>
             <div class="px-main py-main flex-col-center" style="align-items: center; justify-content: center;">
                 <!-- Recreating the blue circle with arrow using CSS/SVG -->
-                <div style="width: 120px; height: 120px; background-color: #2b459c; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white;">
+                <div style="width: 120px; height: 120px; border: 1px solid var(--text-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--text-color);">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <polyline points="15 18 6 18 6 9"></polyline>
@@ -192,9 +251,9 @@
         <section class="section-line-bottom grid-container">
             <div class="border-right px-main py-main flex-col-center">
                 <div style="width: 100%;">
-                    <h3 class="display-text mb-main" style="max-width: 600px; font-size: 2.5rem; line-height: 1.1;">What happens when someone clicks on "Fixed deposit"?</h3>
-                    <p class="body-large mb-sm" style="color: #475569;">Does user flow of Open FD gets triggered?</p>
-                    <p class="body-large" style="text-decoration: underline; text-decoration-color: #2b459c; text-decoration-thickness: 3px; text-underline-offset: 6px; font-weight: 500;">But then where will the data of past FDs be visible?</p>
+                    <h3 class="display-text mb-main" style="max-width: 600px; font-size: 2rem; line-height: 1.1;">What happens when someone clicks on "Fixed deposit"?</h3>
+                    <p class="body-large mb-sm" style="color: var(--text-muted);">Does user flow of Open FD gets triggered?</p>
+                    <p class="body-large" style="text-decoration: underline; text-decoration-color: var(--text-color); text-decoration-thickness: 2px; text-underline-offset: 6px;">But then where will the data of past FDs be visible?</p>
                 </div>
             </div>
             <div class="px-main py-main flex-col-center">
