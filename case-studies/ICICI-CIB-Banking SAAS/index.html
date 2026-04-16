@@ -15,9 +15,6 @@
     <!-- Glass Header (Copied exactly from home screen) -->
     <header class="nav">
       <div class="nav-inner">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
         <nav class="nav-links">
            <a href="../../index.html" class="nav-link">Home</a>
           <div class="dropdown">
@@ -60,14 +57,18 @@
             <div class="border-right px-main py-main flex-col-center" style="justify-content: flex-start;">
                 <div style="width: 100%;">
                     <span class="label-text">(Introduction)</span>
-                    <h2 class="display-text">Project<br>Overview</h2>
+                    <h2 class="display-text mb-main">Project<br>Overview</h2>
+                    <!-- Dashboard Image -->
+                    <div style="width: 100%; border: 1px solid var(--line-color); overflow: hidden; border-radius: 4px; background-color: rgba(0,0,0,0.04);">
+                        <img src="../../assets/images/CIB/Dashboardexplain.png" alt="Detailed dashboard breakdown of ICICI Corporate Internet Banking" class="responsive-img" style="width: 100%; display: block; object-fit: contain;">
+                    </div>
                 </div>
             </div>
             
             <!-- Right Side: Content Blocks -->
             <div class="px-main py-main">
                 <p class="body-large mb-main">Corporate Internet Banking (CIB) is a specialized online banking platform tailored for businesses, organizations, and institutions (non-individual customers)</p>
-                <p class="body-large mb-main">It enables companies—from small enterprises to large corporations—to access, manage, and transact on their business accounts securely over the internet, 24/7</p>
+                <p class="body-large mb-main">It enables companies from small enterprises to large corporations to access, manage, and transact on their business accounts securely over the internet, 24/7</p>
                 <p class="body-large mb-main">Supports initiator–approver workflows (one user initiates, another approves payments), audit trails, role-based access, 2-factor authentication, and transaction limits for robust security.</p>
                 
                 <!-- Crisp Difference Section -->
@@ -100,7 +101,7 @@
             <!-- Left Side: Context & Image Placeholder -->
             <div class="border-right" style="display: flex; flex-direction: column; justify-content: flex-start;">
                 <!-- Abstract image placeholder following brutalist language -->
-                <div style="width: 100%; aspect-ratio: 16/9; background-color: rgba(255,255,255,0.02); border-bottom: 1px solid var(--line-color); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div style="width: 100%; aspect-ratio: 16/9; background-color: rgba(0,0,0,0.04); border-bottom: 1px solid var(--line-color); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; position: relative;">
                     <img src="/assets/images/CIB/cib-overview.png" alt="ICICI Corporate Internet Banking Overview" style="width: 100%; height: 100%; object-fit: cover;">
                     <!-- Corner accent lines for technical feel -->
                     <div style="position: absolute; bottom:0; left:0; width: 10px; height: 1px; background: var(--text-muted);"></div>
@@ -125,7 +126,7 @@
                     <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                         <span class="body-large" style="color: var(--text-muted); font-family: monospace;">01</span>
                         <div>
-                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Fixed Deposit (FD) Creation — Maker Flow</h4>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">Fixed Deposit (FD) Creation  -Maker Flow</h4>
                             <p class="body-standard" style="color: var(--text-muted);">Designed a structured, step-by-step flow to reduce ambiguity and prevent high-value input errors, improving clarity in transaction initiation.</p>
                         </div>
                     </div>
@@ -133,7 +134,7 @@
                     <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                         <span class="body-large" style="color: var(--text-muted); font-family: monospace;">02</span>
                         <div>
-                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Approval — Maker–Checker / Checker Flow</h4>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Approval - Maker–Checker / Checker Flow</h4>
                             <p class="body-standard" style="color: var(--text-muted);">Simplified multi-user approval workflows by clearly defining task ownership and status visibility, enabling faster and more confident decision-making.</p>
                         </div>
                     </div>
@@ -141,7 +142,7 @@
                     <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                         <span class="body-large" style="color: var(--text-muted); font-family: monospace;">03</span>
                         <div>
-                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure — Maker Flow</h4>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure - Maker Flow</h4>
                             <p class="body-standard" style="color: var(--text-muted);">Redesigned closure journeys to reduce friction and guide users through critical financial decisions with better clarity and control.</p>
                         </div>
                     </div>
@@ -149,7 +150,7 @@
                     <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                         <span class="body-large" style="color: var(--text-muted); font-family: monospace;">04</span>
                         <div>
-                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure Approval — Multi-role Flow</h4>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">FD Closure Approval - Multi-role Flow</h4>
                             <p class="body-standard" style="color: var(--text-muted);">Improved approval visibility and reduced confusion in closure workflows across different user roles.</p>
                         </div>
                     </div>
@@ -165,11 +166,49 @@
                     <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                         <span class="body-large" style="color: var(--text-muted); font-family: monospace;">06</span>
                         <div>
-                            <h4 class="body-large mb-sm" style="color: var(--text-color);">OD Journey (RBI-Compliant Design)</h4>
+                            <h4 class="body-large mb-sm" style="color: var(--text-color);">OD Journey (RBI Compliant Design)</h4>
                             <p class="body-standard" style="color: var(--text-muted);">Iterated 13+ times to design a compliant OD experience aligned with RBI guidelines, balancing regulatory constraints with usability.</p>
                         </div>
                     </div>
                     
+                </div>
+            </div>
+        </section>
+
+        <!-- Fixed Deposit Context & Role Section -->
+        <section class="section-line-bottom">
+            <!-- Strong Opening Line -->
+            <div class="px-main py-main flex-col-center text-center">
+                <h2 class="display-text mb-sm" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); text-align: center; max-width: 1200px; margin: 0 auto; line-height: 1.3;">Fixed Deposits are one of the most fundamental yet high-impact financial products in corporate banking making their usability critical to both user success and business outcomes.</h2>
+            </div>
+
+            <!-- 3 Columns for compact height -->
+            <div class="grid-3-cols section-line-top">
+                <!-- Column 1: Product Introduction -->
+                <div class="border-right px-main py-main">
+                    <span class="label-text" style="color: var(--text-color);">01 / Product Introduction</span>
+                    <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Understanding Corporate FDs</h3>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">Fixed Deposits (FDs) are a core financial product that allow businesses to invest surplus funds for a fixed tenure in exchange for guaranteed returns.</p>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">In a corporate banking context, FDs are not just savings instruments, they are part of a broader treasury strategy, where enterprises manage liquidity, optimize returns, and balance risk across financial instruments.</p>
+                    <p class="body-standard" style="color: var(--text-muted);">Unlike retail FDs, corporate FDs involve higher transaction values, multi-level approvals, and integration with other financial services such as overdrafts and credit facilities.</p>
+                </div>
+
+                <!-- Column 2: Business Context -->
+                <div class="border-right px-main py-main">
+                    <span class="label-text" style="color: var(--text-color);">02 / Business Context</span>
+                    <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Generating Revenue</h3>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">Fixed Deposits play a critical role in a bank's financial ecosystem. Deposited funds are utilized by banks to lend at higher interest rates, creating a margin between borrowing and lending, making FDs a key contributor to revenue generation.</p>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">In corporate banking, higher deposit values and longer tenures make FDs especially valuable, not only for revenue but also for strengthening long-term customer relationships.</p>
+                    <p class="body-standard" style="color: var(--text-muted);">Additionally, FDs act as a gateway for cross-selling financial products such as loans, overdrafts against deposits, and treasury services further increasing customer lifetime value.</p>
+                </div>
+
+                <!-- Column 3: My Role -->
+                <div class="px-main py-main">
+                    <span class="label-text" style="color: var(--text-color);">03 / My Role</span>
+                    <h3 class="display-text mb-sm" style="font-size: 1.5rem;">Designing the Experience</h3>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">As a UX Designer working on ICICI Corporate Internet Banking (CIB), I was responsible for improving the end-to-end Fixed Deposit booking experience within a complex enterprise environment.</p>
+                    <p class="body-standard mb-sm" style="color: var(--text-muted);">My work involved identifying usability challenges in the existing flow, restructuring the experience to reduce cognitive load, and introducing decision-support mechanisms such as real-time financial feedback and guided inputs.</p>
+                    <p class="body-standard" style="color: var(--text-muted);">I collaborated with cross-functional teams to ensure that the redesigned experience aligned with both user needs and business objectives, particularly around improving discoverability, conversion, and product adoption.</p>
                 </div>
             </div>
         </section>
@@ -193,7 +232,7 @@
                     <!-- Image Placeholder -->
                     <div class="image-wrapper" style="height: auto; padding: 0; margin-bottom: 3rem; border: 1px solid var(--line-color); border-radius: 8px; overflow: hidden;">
                         <!-- Empty src as requested, ready for manual image upload -->
-                        <img src="../../assets/images/CIB/FDscreenshot.png" alt="Before - ICICI Legacy UI" style="width: 100%; height: auto; max-height: 480px; object-fit: contain; display: block; background: rgba(255,255,255,0.02);">
+                        <img src="../../assets/images/CIB/FDscreenshot.png" alt="Before - ICICI Legacy UI" style="width: 100%; height: auto; max-height: 480px; object-fit: contain; display: block; background: rgba(0,0,0,0.04);">
                     </div>
                     
                     <h4 class="body-large" style="font-weight: 500; font-style: italic; margin-bottom: 1.5rem;">Key issues</h4>
@@ -214,7 +253,7 @@
                     <!-- Image Placeholder -->
                     <div class="image-wrapper" style="height: auto; padding: 0; margin-bottom: 3rem; border: 1px solid var(--line-color); border-radius: 8px; overflow: hidden;">
                         <!-- Empty src as requested, ready for manual image upload -->
-                        <img src="../../assets/images/CIB/FixedDepo.png" alt="After - Contextual popup UI" style="width: 100%; height: auto; max-height: 480px; object-fit: contain; display: block; background: rgba(255,255,255,0.02);">
+                        <img src="../../assets/images/CIB/FixedDepo.png" alt="After - Contextual popup UI" style="width: 100%; height: auto; max-height: 480px; object-fit: contain; display: block; background: rgba(0,0,0,0.04);">
                     </div>
                     
                     <h4 class="body-large" style="font-weight: 500; font-style: italic; margin-bottom: 1.5rem;">Key improvements</h4>
@@ -293,43 +332,9 @@
             </div>
         </section>
 
-        <!-- Dashboard Image Section -->
-        <section class="section-line-bottom">
-            <div class="px-main py-main text-center">
-                <div class="image-wrapper mx-auto">
-                    <!-- Space left for the upcoming uploaded dashboard image -->
-                    <img src="../../assets/images/CIB/Dashboardexplain.png" alt="Detailed dashboard breakdown of ICICI Corporate Internet Banking" class="responsive-img placeholder-bg" style="width: 100%; border: 1px solid var(--line-color);">
-                </div>
-            </div>
-        </section>
 
-        <!-- Dialogue / UX Quote Section -->
-        <section class="section-line-bottom grid-container">
-            <div class="border-right px-main py-main flex-col-center">
-                <div style="width: 100%;">
-                    <h3 class="display-text mb-main" style="max-width: 600px; font-size: 2rem; line-height: 1.1;">What happens when someone clicks on "Fixed deposit"?</h3>
-                    <p class="body-large mb-sm" style="color: var(--text-muted);">Does user flow of Open FD gets triggered?</p>
-                    <p class="body-large" style="text-decoration: underline; text-decoration-color: var(--text-color); text-decoration-thickness: 2px; text-underline-offset: 6px;">But then where will the data of past FDs be visible?</p>
-                </div>
-            </div>
-            <div class="px-main py-main flex-col-center">
-                <!-- Brutalist Comment Box -->
-                <div style="border: 1px solid var(--line-color); padding: 2.5rem; background-color: var(--text-color); color: var(--bg-color); width: 100%; max-width: 600px; margin: 0 auto; outline: 1px solid var(--line-color); outline-offset: 4px;">
-                    <p class="body-large mb-main" style="color: var(--bg-color); font-style: italic;">
-                        "We need to start the journey with the dashboard of Fixed Deposit, where there will be collated data of all past Fixed Deposit, this dashboard will trigger all other journeys."
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; flex-shrink: 0; background-color: #333; border: 1px solid rgba(0,0,0,0.2); border-radius: 50%; overflow: hidden;">
-                            <img src="dummy-krishan.jpg" alt="Krishan Gupta" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div>
-                            <p class="body-standard" style="font-weight: 700; margin-bottom: 0.2rem; color: var(--bg-color);">Krishan Gupta</p>
-                            <p class="label-text" style="color: rgba(0,0,0,0.6); margin-bottom: 0;">User Experience design lead,<br>Them Consulting</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
 
         <!-- 02 User Personas Intro -->
         <section class="section-line-bottom">
@@ -378,10 +383,13 @@
 
         <!-- Inter-relation flows -->
         <section class="section-line-bottom">
-            <div class="px-main py-sm" style="display:flex; justify-content:center;">
-                <h3 class="body-large" style="text-align: center; max-width: 900px; font-size: 1.25rem; color: var(--text-color);">
-                    These 3 personas are inter-related in the following ways in FD creation ecosystem
-                </h3>
+            <div class="px-main py-main flex-col-center">
+                <div style="width: 100%;">
+                    <h2 class="display-text" style="font-size: clamp(4rem, 6vw, 5.5rem); margin-bottom: 1.5rem;">Case Scoping</h2>
+                    <p class="body-large" style="max-width: 900px; font-size: 1.25rem; color: var(--text-muted);">
+                        These 3 personas are inter-related in the following ways in FD creation ecosystem
+                    </p>
+                </div>
             </div>
             
             <div style="display: flex; flex-direction: column;">
@@ -485,6 +493,146 @@
                             <div style="background-color: var(--text-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500;">FD account gets closed</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Heading for Key Experience Gaps (Dark Theme) -->
+        <section class="px-main py-main flex-col-center">
+            <div style="width: 100%; text-align: center;">
+                <h2 class="display-text" style="font-size: clamp(3rem, 5vw, 4.5rem);">Key Experience Gaps in FD Booking Flow</h2>
+            </div>
+        </section>
+
+        <!-- White Theme List Section -->
+        <section style="background-color: #ffffff; color: #0d0d0d; --line-color: rgba(0,0,0,1); --text-muted: #555;">
+            
+            <!-- Item 01 -->
+            <div class="px-main py-main" style="border-bottom: 1px solid var(--line-color);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+                    <h3 style="font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.95; letter-spacing: -0.04em; font-weight: 500; max-width: 80%;">Low Product Visibility</h3>
+                    <span style="font-size: clamp(5rem, 10vw, 8rem); line-height: 0.8; font-weight: 500; color: rgba(0,0,0,0.15);">01</span>
+                </div>
+                <div style="width: 100%; height: 1px; background-color: #0d0d0d; margin-bottom: 3rem;"></div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 3rem;">
+                    <div>
+                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Why this matters</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1.5rem; font-weight: 500; font-size: 1.1rem; line-height: 1.5;">Critical financial actions like Fixed Deposit booking were buried within navigation, making discovery difficult for users.</p>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Users struggled to locate FD features within the system</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">High-intent users dropped off before even initiating the journey</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Reduced product discoverability directly impacted adoption</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Poor visibility of outcomes -> low user confidence</span></li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; align-items: flex-end; justify-content: flex-end;">
+                         <div style="width: 100%; aspect-ratio: 16/10; background-color: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.1); overflow: hidden; display: flex;">
+                             <!-- Paste your image path in the src="" below -->
+                             <img src="../../assets/images/CIB/Entry points_FD.png" alt="Low Product Visibility" style="width: 100%; height: 100%; object-fit: cover;">
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 02 -->
+            <div class="px-main py-main" style="border-bottom: 1px solid var(--line-color);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+                    <h3 style="font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.95; letter-spacing: -0.04em; font-weight: 500; max-width: 80%;">Fragmented Information Hierarchy & lack of upselling</h3>
+                    <span style="font-size: clamp(5rem, 10vw, 8rem); line-height: 0.8; font-weight: 500; color: rgba(0,0,0,0.15);">02</span>
+                </div>
+                <div style="width: 100%; height: 1px; background-color: #0d0d0d; margin-bottom: 3rem;"></div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 3rem;">
+                    <div>
+                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Key issues</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1.5rem; font-weight: 500; font-size: 1.1rem; line-height: 1.5;">The interface lacked a clear structure, forcing users to process dense financial inputs without guidance</p>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Critical inputs (tenure, interest type) was missing</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Poor visibility of outcomes -> low user confidence</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Asking for premature closure facility too early in the form, even before user has decided whether to go forward with the FD opening</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">No way introduced to nudge the user to increase the ticket size of Deposit amount of FD</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">No real-time feedback on returns or maturity value</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">No provision introduced to enter Maturity date instead of just tenure</span></li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; align-items: flex-end; justify-content: flex-end;">
+                         <div style="width: 100%; aspect-ratio: 16/10; background-color: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.1); overflow: hidden; display: flex;">
+                             <!-- Paste your image path in the src="" below -->
+                             <img src="../../assets/images/CIB/FDscreenshot1.png" alt="Fragmented Information Hierarchy" style="width: 100%; height: 100%; object-fit: cover;">
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 03 -->
+            <div class="px-main py-main" style="border-bottom: 1px solid var(--line-color);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+                    <h3 style="font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.95; letter-spacing: -0.04em; font-weight: 500; max-width: 80%;">Decision Paralysis in a Complex Flow</h3>
+                    <span style="font-size: clamp(5rem, 10vw, 8rem); line-height: 0.8; font-weight: 500; color: rgba(0,0,0,0.15);">03</span>
+                </div>
+                <div style="width: 100%; height: 1px; background-color: #0d0d0d; margin-bottom: 3rem;"></div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 3rem;">
+                    <div>
+                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Key issues</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1.5rem; font-weight: 500; font-size: 1.1rem; line-height: 1.5;">Users were required to make financial decisions without sufficient support, leading to hesitation and drop-offs</p>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">As the dropdown of choosing an account was highly scrollable and without complete information about the account, users got stuck in choosing</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Heavy reliance on prior financial knowledge or external calculation</span></li>
+                            <li style="display: flex; gap: 0.8rem; align-items: flex-start;"><span style="color: var(--text-muted); font-weight: bold;">-</span> <span style="color: var(--text-muted);">Lack of guidance on higher interest rates on higher deposit amount or longer tenure gave no encouragement to the user to increase ticket size of FD deposit amount</span></li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; align-items: flex-end; justify-content: flex-end;">
+                         <div style="width: 100%; aspect-ratio: 16/10; background-color: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.1); overflow: hidden; display: flex;">
+                             <!-- Paste your image path in the src="" below -->
+                             <img src="../../assets/images/CIB/FD screenshot3.png" alt="Decision Paralysis" style="width: 100%; height: 100%; object-fit: cover;">
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Impact on FD Ecosystem (Minimalistic Light Theme) -->
+        <section class="section-line-bottom px-main py-main" style="background-color: #f2f2f2; color: #111;">
+            <div style="margin-bottom: 8rem; max-width: 1400px;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.03em;">
+                    <span style="display: block; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: #555;">Impact on FD Ecosystem</span>
+                    The experience was not just inefficient, it actively discouraged users from completing high-value financial actions.
+                </h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: flex-start;">
+                <!-- Metric 1 -->
+                <div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">(Barrier to Entry)</p>
+                    <h3 style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 1rem;">High</h3>
+                    <p style="font-size: 0.95rem; color: #555; max-width: 90%; line-height: 1.5;">Users struggled to even discover FD options, limiting initial engagement.</p>
+                </div>
+                <!-- Metric 2 -->
+                <div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">(Journey Friction)</p>
+                    <h3 style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 1rem;">70%</h3>
+                    <p style="font-size: 0.95rem; color: #555; max-width: 90%; line-height: 1.5;">of users bounced off at first step due to poor form structure causing decision paralysis.</p>
+                </div>
+                <!-- Metric 3 -->
+                <div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">(Successful Conversion)</p>
+                    <h3 style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 1rem;">5%</h3>
+                    <p style="font-size: 0.95rem; color: #555; max-width: 90%; line-height: 1.5;">converted due to unclear guidance on maturity proceed and interest rate.</p>
+                </div>
+                <!-- Metric 4 -->
+                <div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">(Ticket Size)</p>
+                    <h3 style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 1rem;">Low</h3>
+                    <p style="font-size: 0.95rem; color: #555; max-width: 90%; line-height: 1.5;">amounts defaulted to because there was no upfront upselling techniques incorporated.</p>
                 </div>
             </div>
         </section>

@@ -1,11 +1,11 @@
 :root {
-    --bg-color: #0d0d0d;
-    --text-color: #f4f4f4;
-    --text-muted: #8a8a8a;
-    --line-color: rgba(255, 255, 255, 0.15);
+    --bg-color: #ffffff;
+    --text-color: #0d0d0d;
+    --text-muted: #555555;
+    --line-color: rgba(0, 0, 0, 0.15);
     --font-main: 'Inter', Helvetica, sans-serif;
-    --nav-bg: rgba(13, 13, 13, 0.8);
-    --nav-text: #f4f4f4;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-text: #0d0d0d;
 }
 
 /* CSS Reset */
@@ -68,8 +68,8 @@ body {
     justify-content: center;
     padding: 10px 32px;
     border-radius: 100px;
-    background: rgba(30, 30, 30, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16px);
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     opacity: 1;
 }
 
@@ -109,35 +109,46 @@ body {
 }
 
 .nav-cta:hover {
-    background: #ffffff;
-    color: var(--bg-color);
+    background: #000000;
+    color: #ffffff;
     transform: scale(1.02);
 }
 
 .dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 100%;
     left: 10px;
-    background: #1a1a1a;
+    background: #ffffff;
     border: 1px solid var(--line-color);
     padding: 10px 0;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
     min-width: 180px;
     list-style: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
 }
 .dropdown-menu li { padding: 8px 20px; }
 .dropdown-menu li a {
-    color: #e0e0e0;
+    color: #555555;
     font-size: 14px;
     text-decoration: none;
 }
 .dropdown-menu li a:hover {
-    color: #ffffff;
+    color: #0d0d0d;
 }
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
 
 /* Typography Constraints */
 h1, h2, h3, h4, h5, h6 {
@@ -163,14 +174,14 @@ h1, h2, h3, h4, h5, h6 {
 .body-large {
     font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
     font-weight: 400;
 }
 
 .body-standard {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .label-text {
