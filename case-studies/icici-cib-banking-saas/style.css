@@ -87,7 +87,7 @@ body {
     justify-content: center;
     padding: 8px 16px;
     border-radius: 100px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-color);
     opacity: 0.8;
     text-decoration: none;
@@ -142,7 +142,7 @@ body {
 .dropdown-menu li { padding: 8px 24px; }
 .dropdown-menu li a {
     color: #555555;
-    font-size: 14px;
+    font-size: 1rem;
     text-decoration: none;
 }
 .dropdown-menu li a:hover {
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .body-standard {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.8);
 }
