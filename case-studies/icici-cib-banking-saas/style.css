@@ -282,6 +282,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
 }
 
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.corp-col {
+    border-right: 1px solid var(--line-color);
+    padding-right: 2rem;
+}
+
 .step-tags {
     margin-top: 1rem;
     font-size: 0.7rem;
@@ -353,6 +365,17 @@ h1, h2, h3, h4, h5, h6 {
     .px-main { padding-left: 1.5rem; padding-right: 1.5rem; }
     .py-main { padding-top: 4rem; padding-bottom: 4rem; }
     .image-wrapper { padding: 1.5rem; }
+
+    /* Comparison Grid Mobile */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    .corp-col {
+        border-right: none;
+        border-bottom: 1px solid var(--line-color);
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
 
     /* Mobile Menu */
     .mobile-menu-toggle {
