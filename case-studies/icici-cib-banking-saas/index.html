@@ -15,6 +15,9 @@
     <!-- Glass Header (Copied exactly from home screen) -->
     <header class="nav">
       <div class="nav-inner">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
         <nav class="nav-links">
            <a href="../../index.html" class="nav-link">Home</a>
           <div class="dropdown">
@@ -306,16 +309,16 @@
                     <h2 class="display-text" style="font-size: clamp(2.5rem, 4.5vw, 3.8rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 4rem;">Problem &<br>Solution</h2>
                     
                     <!-- Circles Container -->
-                    <div style="position: relative; height: 580px; width: 100%; max-width: 600px; margin-top: 2rem;">
+                    <div class="spheres-container">
                         
                         <!-- Dark Circle: Problem -->
-                        <div style="width: 320px; height: 320px; background-color: #060b19; border-radius: 50%; color: #fff; padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; position: absolute; top: 0; left: 0; z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <div class="sphere-problem">
                             <h3 class="display-text mb-sm" style="font-size: 1.8rem; color: #fff; font-weight: 500;">Problem</h3>
                             <p class="body-standard" style="color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5;">OD against FD, despite being a high-value credit product, suffered from low discoverability and was disconnected from key user decision moments.</p>
                         </div>
                         
                         <!-- Light Glass Circle: Solution -->
-                        <div style="width: 360px; height: 360px; border-radius: 50%; padding: 4rem; display: flex; flex-direction: column; justify-content: center; position: absolute; top: 200px; left: 220px; z-index: 3; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.6) 100%); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                        <div class="sphere-solution">
                             <h3 class="display-text mb-sm" style="font-size: 2rem; color: #000; font-weight: 500;">Solution</h3>
                             <p class="body-standard" style="color: #333; font-size: 0.95rem; line-height: 1.5;">Instead of treating OD as a separate feature, it was repositioned as a decision-support option integrated directly within the FD closure flow.</p>
                         </div>
@@ -395,10 +398,10 @@
                 }
                 </style>
                 <div style="width: 100%; margin: 2rem 0 5rem 0;">
-                    <div style="background-color: #ffffff; border-radius: 24px; padding: clamp(2rem, 5vw, 4rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4rem; overflow: hidden; position: relative; border: 1px solid var(--line-color); box-shadow: 0 20px 60px rgba(0,0,0,0.04);">
+                    <div class="insight-card" style="background-color: #ffffff; border-radius: 24px; padding: clamp(2rem, 5vw, 4rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4rem; overflow: hidden; position: relative; border: 1px solid var(--line-color); box-shadow: 0 20px 60px rgba(0,0,0,0.04);">
 
                         <!-- Left: Text content -->
-                        <div style="flex: 1 1 400px; position: relative; z-index: 2;">
+                        <div class="insight-text" style="flex: 1 1 400px; position: relative; z-index: 2;">
                             <span class="body-large mb-sm" style="display: inline-block; color: #4ade80; font-weight: 600; font-family: monospace; letter-spacing: 0.1em; text-transform: uppercase;">Core Selling Point</span>
                             <h3 class="display-text mb-main" style="font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--text-color);">Behavioral Insight</h3>
                             <p class="body-standard" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
@@ -851,6 +854,6 @@
         </section>
 
     </main>
-
+    <script src="../../script.js"></script>
 </body>
 </html>

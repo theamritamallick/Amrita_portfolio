@@ -289,6 +289,59 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-muted);
 }
 
+/* Spheres (Problem & Solution) */
+.spheres-container {
+    position: relative; 
+    height: 580px; 
+    width: 100%; 
+    max-width: 600px; 
+    margin-top: 2rem;
+}
+.sphere-problem {
+    width: 320px; 
+    height: 320px; 
+    background-color: #060b19; 
+    border-radius: 50%; 
+    color: #fff; 
+    padding: 3.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 2; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.sphere-solution {
+    width: 360px; 
+    height: 360px; 
+    border-radius: 50%; 
+    padding: 4rem; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    position: absolute; 
+    top: 200px; 
+    left: 220px; 
+    z-index: 3; 
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.6) 100%); 
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px); 
+    border: 1px solid rgba(255,255,255,0.8); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+/* Mobile Menu Toggle button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+}
+
 @media (max-width: 768px) {
     .grid-container, .grid-3-cols {
         grid-template-columns: 1fr;
@@ -300,4 +353,67 @@ h1, h2, h3, h4, h5, h6 {
     .px-main { padding-left: 1.5rem; padding-right: 1.5rem; }
     .py-main { padding-top: 4rem; padding-bottom: 4rem; }
     .image-wrapper { padding: 1.5rem; }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+        display: block;
+        margin-right: auto;
+    }
+    .nav-inner {
+        justify-content: flex-end;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        padding: 24px;
+        gap: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        margin-top: 16px;
+    }
+    .nav-links.is-open {
+        display: flex;
+    }
+    .nav-cta {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Spheres Container Mobile */
+    .spheres-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 0;
+    }
+    .sphere-problem, .sphere-solution {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        padding: 2.5rem;
+    }
+    .sphere-solution {
+        margin-top: -3rem; /* keep them overlapping slightly on mobile */
+    }
+
+    /* Behavioral Insight Mobile */
+    .insight-card {
+        padding: 2rem !important;
+        gap: 2rem !important;
+    }
+    .insight-text {
+        flex: 1 1 100% !important;
+        min-width: 0;
+    }
 }
