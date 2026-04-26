@@ -51,6 +51,18 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.experience-gap-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 3rem;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
 /* Nav */
 .nav {
     position: absolute;
@@ -355,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-    .grid-container, .grid-3-cols {
+    .grid-container, .grid-3-cols, .experience-gap-grid, .impact-grid {
         grid-template-columns: 1fr;
     }
     .border-right {
