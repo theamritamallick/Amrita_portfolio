@@ -615,11 +615,11 @@
                     <div class="border-right px-main py-sm flex-col-center" style="justify-content: center;">
                         <span class="label-text" style="margin: 0; color: var(--text-color);">CASE 01</span>
                     </div>
-                    <div class="px-main py-sm" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <div class="px-main py-sm case-flow-container">
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker initiates FD creation</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker+Checker / Checker approves the creation</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="background-color: var(--text-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500;">FD account gets created</div>
                     </div>
                 </div>
@@ -629,11 +629,11 @@
                     <div class="border-right px-main py-sm flex-col-center" style="justify-content: center;">
                         <span class="label-text" style="margin: 0; color: var(--text-color);">CASE 02</span>
                     </div>
-                    <div class="px-main py-sm" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <div class="px-main py-sm case-flow-container">
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker initiates FD creation</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker+Checker / Checker rejects the creation</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px dashed var(--line-color); color: var(--text-muted); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">FD account does not gets created</div>
                     </div>
                 </div>
@@ -643,11 +643,11 @@
                     <div class="border-right px-main py-sm flex-col-center" style="justify-content: center;">
                         <span class="label-text" style="margin: 0; color: var(--text-color);">CASE 03</span>
                     </div>
-                    <div class="px-main py-sm" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <div class="px-main py-sm case-flow-container">
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker closes a FD account</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker+Checker / Checker approves the closure</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="background-color: var(--text-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500;">FD account gets closed</div>
                     </div>
                 </div>
@@ -657,11 +657,11 @@
                     <div class="border-right px-main py-sm flex-col-center" style="justify-content: center;">
                         <span class="label-text" style="margin: 0; color: var(--text-color);">CASE 04</span>
                     </div>
-                    <div class="px-main py-sm" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <div class="px-main py-sm case-flow-container">
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker closes a FD account</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker+Checker / Checker rejects the closure</div>
-                        <div style="color: var(--text-muted);">→</div>
+                        <div class="flow-arrow">→</div>
                         <div style="border: 1px dashed var(--line-color); color: var(--text-muted); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">FD account remains open</div>
                     </div>
                 </div>
@@ -688,9 +688,9 @@
                     </div>
                     <div class="px-main py-sm flex-col-center" style="gap: 1.5rem; align-items: flex-start;">
                         <p class="body-standard" style="color: var(--text-muted); margin: 0;">In case the Maker is a sole proprietor of the company (No approval process)</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                        <div class="case-flow-container">
                             <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker initiates FD creation</div>
-                            <div style="color: var(--text-muted);">→</div>
+                            <div class="flow-arrow">→</div>
                             <div style="background-color: var(--text-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500;">FD account gets created</div>
                         </div>
                     </div>
@@ -703,9 +703,9 @@
                     </div>
                     <div class="px-main py-sm flex-col-center" style="gap: 1.5rem; align-items: flex-start;">
                         <p class="body-standard" style="color: var(--text-muted); margin: 0;">In case the Maker is a sole proprietor of the company (No approval process)</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                        <div class="case-flow-container">
                             <div style="border: 1px solid var(--line-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem;">Maker closes FD account</div>
-                            <div style="color: var(--text-muted);">→</div>
+                            <div class="flow-arrow">→</div>
                             <div style="background-color: var(--text-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500;">FD account gets closed</div>
                         </div>
                     </div>
