@@ -387,13 +387,14 @@ h1, h2, h3, h4, h5, h6 {
     
     .case-flow-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .flow-arrow {
         transform: rotate(90deg);
         margin: 0.5rem 0;
     }
+    
     .border-right {
         border-right: none;
         border-bottom: 1px solid var(--line-color);
