@@ -2,9 +2,9 @@
 .contact-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .contact-modal-overlay.active {
@@ -23,14 +23,14 @@
 .contact-modal-card {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 28px;
-  padding: 32px 28px 28px;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
-  transform: translateY(18px) scale(0.96);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 460px;
+  background: #ffffff !important; /* Solid opaque color */
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 24px !important;
+  padding: 30px 26px 26px !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16) !important;
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.25s ease;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -41,14 +41,14 @@
 
 .contact-modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(255, 255, 255, 0.85);
-  color: #475569;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -58,15 +58,13 @@
 }
 
 .contact-modal-close:hover {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
-  transform: rotate(90deg);
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .contact-modal-header {
-  margin-bottom: 22px;
-  padding-right: 32px;
+  margin-bottom: 20px;
+  padding-right: 28px;
 }
 
 .contact-badge {
@@ -76,12 +74,12 @@
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #334155;
-  background: rgba(15, 23, 42, 0.05);
+  letter-spacing: 0.06em;
+  color: #475569;
+  background: #f1f5f9;
   padding: 4px 10px;
   border-radius: 999px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .contact-badge::before {
@@ -90,21 +88,19 @@
   height: 6px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 8px #10b981;
 }
 
 .contact-modal-header h2 {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   line-height: 1.25;
-  letter-spacing: -0.02em;
 }
 
 .contact-modal-header p {
-  font-size: 0.9rem;
-  color: #475569;
+  font-size: 0.88rem;
+  color: #64748b;
   margin: 0;
   line-height: 1.45;
 }
@@ -112,34 +108,33 @@
 .contact-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contact-card-item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   padding: 12px 14px;
-  background: rgba(243, 246, 251, 0.8);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
 
 .contact-card-item:hover {
-  background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.16);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-  transform: translateY(-1px);
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .contact-icon-wrapper {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: #0f172a;
-  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +142,8 @@
 }
 
 .contact-icon-wrapper.linkedin {
-  background: #0a66c2;
+  background: #ffffff;
+  color: #334155;
 }
 
 .contact-info {
@@ -161,7 +157,7 @@
   font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: #64748b;
   margin-bottom: 2px;
 }
@@ -194,41 +190,41 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 7px 11px;
-  border-radius: 10px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
   background: #ffffff;
-  color: #0f172a;
+  color: #334155;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   line-height: 1;
 }
 
 .contact-btn:hover {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
 }
 
 .contact-btn.copied {
-  background: #059669 !important;
-  color: #ffffff !important;
-  border-color: #059669 !important;
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
 }
 
 /* Mobile responsive adjustments */
 @media (max-width: 480px) {
   .contact-modal-card {
-    padding: 26px 20px 22px;
-    border-radius: 22px;
+    padding: 24px 18px 20px !important;
+    border-radius: 20px !important;
   }
   
   .contact-modal-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   
   .contact-card-item {
@@ -239,7 +235,6 @@
   .contact-icon-wrapper {
     width: 36px;
     height: 36px;
-    border-radius: 10px;
   }
   
   .contact-value {
@@ -247,7 +242,7 @@
   }
   
   .contact-btn {
-    padding: 6px 9px;
+    padding: 5px 9px;
     font-size: 0.74rem;
   }
 }

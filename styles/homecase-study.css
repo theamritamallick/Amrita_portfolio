@@ -56,16 +56,17 @@ font-family:'Inter',sans-serif;
 }
 
 .nav-cta {
-  background: #0f172a;
-  color: #ffffff;
-  border: 1px solid transparent;
+  background: transparent;
+  color: #475569;
+  border: 1px solid rgba(15, 23, 42, 0.15);
   box-shadow: none;
   margin-left: auto;
 }
 
 .nav-cta:hover {
-  background: #1e293b;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.3);
   transform: none;
 }
 .dropdown{

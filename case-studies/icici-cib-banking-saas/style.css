@@ -128,18 +128,18 @@ body {
 }
 
 .nav-cta {
-    background: var(--text-color);
-    color: var(--bg-color);
-    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     margin-left: auto;
     font-weight: 500;
-    opacity: 1;
 }
 
 .nav-cta:hover {
-    background: #000000;
-    color: #ffffff;
-    transform: scale(1.02);
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+    border-color: rgba(0, 0, 0, 0.3);
+    transform: none;
 }
 
 .dropdown { position: relative; }
