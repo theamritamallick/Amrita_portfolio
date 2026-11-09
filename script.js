@@ -190,3 +190,86 @@ if (starCanvas) {
   initStars();
   drawStars();
 }
+
+// Contact Modal Handling
+const contactModal = document.getElementById("contactModal");
+const contactCloseBtn = document.getElementById("contactModalClose");
+const contactTriggers = document.querySelectorAll(".contact-trigger, [href='#contact']");
+
+function openContactModal(e) {
+  if (e) e.preventDefault();
+  if (!contactModal) return;
+  contactModal.classList.add("active");
+  contactModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  // Close mobile nav menu if open
+  if (typeof navLinksGroup !== 'undefined' && navLinksGroup && navLinksGroup.classList.contains("active")) {
+    navLinksGroup.classList.remove("active");
+  }
+}
+
+function closeContactModal() {
+  if (!contactModal) return;
+  contactModal.classList.remove("active");
+  contactModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+contactTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", openContactModal);
+});
+
+if (contactCloseBtn) {
+  contactCloseBtn.addEventListener("click", closeContactModal);
+}
+
+if (contactModal) {
+  contactModal.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      closeContactModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && contactModal.classList.contains("active")) {
+      closeContactModal();
+    }
+  });
+}
+
+// Copy to clipboard handling
+document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const textToCopy = btn.getAttribute("data-copy");
+    if (!textToCopy) return;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(textToCopy);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+
+      const textSpan = btn.querySelector(".copy-text");
+      const originalText = textSpan ? textSpan.textContent : "Copy";
+      btn.classList.add("copied");
+      if (textSpan) textSpan.textContent = "Copied! ✓";
+
+      setTimeout(() => {
+        btn.classList.remove("copied");
+        if (textSpan) textSpan.textContent = originalText;
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  });
+});
