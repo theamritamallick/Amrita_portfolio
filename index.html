@@ -46,21 +46,48 @@
       </div>
     </header>
 
-    <!-- Floating Prompt / Intro Text with Delay Apperance -->
-    <div class="hero-content-text">
-      <p class="hero-tag reveal-txt" style="animation-delay: 1.0s;">UX Designer & Developer</p>
-      <h2 class="reveal-txt" style="animation-delay: 1.3s;">Hi, I am Amrita.</h2>
-      <h1 class="reveal-txt" style="animation-delay: 1.6s;">
-        I design user experiences that reduce friction in<br>
-       complex workflows
-      </h1>
-       <p class="reveal-txt" style="animation-delay: 1.9s;">
-        Experience across enterprise and SaaS products, high-stakes workflows in financial systems.
-      </p>
-      <p class="reveal-txt" style="animation-delay: 1.9s;">
-        Scroll down to explore my work and process.
-      </p>
+    <!-- Split Hero Container with 3D Face & Hand Control -->
+    <div class="hero-split-container">
+      <!-- Left Column: Narrative & Hand Control Trigger -->
+      <div class="hero-left-column">
+        <p class="hero-tag reveal-txt" style="animation-delay: 0.6s;">UX Designer & Developer</p>
+        <h2 class="reveal-txt" style="animation-delay: 0.8s;">Hi, I am Amrita.</h2>
+        <h1 class="reveal-txt" style="animation-delay: 1.0s;">
+          I design user experiences that reduce friction in complex workflows
+        </h1>
+        <p class="hero-desc reveal-txt" style="animation-delay: 1.2s;">
+          Experience across enterprise and SaaS products, high-stakes workflows in financial systems.
+        </p>
+
+        <!-- Hand Control Card (Interactive 3D Face Control) -->
+        <div class="hand-control-card reveal-txt" id="handControlToggle" style="animation-delay: 1.4s;" role="button" tabindex="0" aria-label="Toggle camera hand gesture control">
+          <div class="hand-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+              <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+              <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+              <path d="M18 8a2 2 0 0 1 2 2v4a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6v-1a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </div>
+          <div class="hand-control-text">
+            <span class="hand-control-title">Try hand control</span>
+            <span class="hand-control-sub" id="handStatusText">Camera stays on device • Click to start</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive 3D Face Viewport -->
+      <div class="hero-right-column">
+        <div class="hero-3d-canvas-wrapper" id="hero3dCanvasContainer">
+          <div class="model-status-badge" id="modelStatusBadge">
+            <span>•</span> 3D Origami Face • Drop amrita.glb to replace
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Hidden webcam video element for MediaPipe -->
+    <video id="handWebcamVideo" playsinline autoplay muted></video>
 
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
@@ -358,6 +385,15 @@
     </div>
   </div>
 
+  <!-- Three.js & GLTF Loader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Google MediaPipe Hands & Camera Utils -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
   <script src="./script.js"></script>
+  <script src="./hero-3d.js"></script>
 </body>
 </html>
