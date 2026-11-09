@@ -87,7 +87,7 @@
   align-items: center;
   gap: 16px;
   padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
@@ -95,7 +95,8 @@
   -webkit-backdrop-filter: blur(16px);
   transition: all 0.3s ease;
   cursor: pointer;
-  max-width: 380px;
+  max-width: 400px;
+  user-select: none;
 }
 
 .hand-control-card:hover {
@@ -106,12 +107,12 @@
 
 .hand-control-card.active {
   border-color: #3b82f6;
-  background: rgba(239, 246, 255, 0.95);
+  background: #eff6ff;
 }
 
 .hand-control-card.tracking {
   border-color: #10b981;
-  background: rgba(236, 253, 245, 0.95);
+  background: #ecfdf5;
 }
 
 .hand-icon-box {
@@ -179,6 +180,85 @@
   outline: none;
 }
 
+/* Live Webcam Mini Preview PiP */
+.webcam-preview-pip {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 130px;
+  height: 98px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0f172a;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
+  z-index: 30;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.webcam-preview-pip.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.webcam-preview-pip video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirrored naturally */
+  display: block;
+}
+
+.webcam-preview-pip canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+.webcam-pip-status {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+  flex-shrink: 0;
+  animation: pipPulse 1.5s infinite;
+}
+
+.pip-dot.active {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: none;
+}
+
+@keyframes pipPulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
 /* Floating Status Badge at bottom of 3D Canvas */
 .model-status-badge {
   position: absolute;
@@ -187,8 +267,8 @@
   font-size: 0.72rem;
   font-weight: 500;
   color: #64748b;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
   padding: 5px 12px;
   border-radius: 999px;
   backdrop-filter: blur(8px);
@@ -205,16 +285,6 @@
 
 .model-status-badge.is-custom span {
   color: #10b981;
-}
-
-/* Hidden video for MediaPipe processing */
-#handWebcamVideo {
-  display: none;
-  position: fixed;
-  top: -9999px;
-  left: -9999px;
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* Responsive adjustments */

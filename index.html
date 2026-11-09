@@ -83,11 +83,18 @@
             <span>•</span> 3D Origami Face • Drop amrita.glb to replace
           </div>
         </div>
+
+        <!-- Live Mini Webcam Preview PiP -->
+        <div class="webcam-preview-pip" id="webcamPreviewPip">
+          <video id="handWebcamVideo" playsinline autoplay muted></video>
+          <canvas id="handLandmarksCanvas"></canvas>
+          <div class="webcam-pip-status">
+            <span class="pip-dot" id="pipStatusDot"></span>
+            <span class="pip-text" id="pipStatusText">Waiting for hand</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Hidden webcam video element for MediaPipe -->
-    <video id="handWebcamVideo" playsinline autoplay muted></video>
 
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
@@ -389,9 +396,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
-  <!-- Google MediaPipe Hands & Camera Utils -->
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <!-- Google MediaPipe Hands -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
 
   <script src="./script.js"></script>
   <script src="./hero-3d.js"></script>
