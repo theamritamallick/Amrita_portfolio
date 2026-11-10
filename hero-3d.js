@@ -47,8 +47,12 @@
 
   // State
   let currentModel = null;
+  let baseModelScale = { x: 1, y: 1, z: 1 };
   let targetRotation = { x: 0, y: 0, z: 0 };
   let currentRotation = { x: 0, y: 0, z: 0 };
+  let targetSqueeze = 0;
+  let currentSqueeze = 0;
+  let squeezeVelocity = 0;
   let isDragging = false;
   let prevPointer = { x: 0, y: 0 };
   let dragVelocity = { x: 0, y: 0 };
@@ -181,6 +185,7 @@
           const maxDim = Math.max(size.x, size.y, size.z);
           const scale = 2.5 / maxDim;
 
+          baseModelScale = { x: scale, y: scale, z: scale };
           model.scale.set(scale, scale, scale);
           model.position.set(-center.x * scale, -center.y * scale + 0.1, -center.z * scale);
 
@@ -221,6 +226,7 @@
       headGroup.remove(headGroup.children[0]);
     }
     const bust = createOrigamiBust();
+    baseModelScale = { x: 1, y: 1, z: 1 };
     headGroup.add(bust);
     currentModel = bust;
     updateModelBadge(false);
@@ -266,11 +272,17 @@
     isDragging = true;
     prevPointer = { x: e.clientX, y: e.clientY };
     container.style.cursor = 'grabbing';
+    if (!handTrackingActive) {
+      targetSqueeze = 0.45; // Hold click to squeeze!
+    }
   });
 
   window.addEventListener('mouseup', () => {
     isDragging = false;
     container.style.cursor = 'grab';
+    if (!handTrackingActive) {
+      targetSqueeze = 0; // Release to bounce back
+    }
   });
 
   // Touch support
@@ -278,6 +290,9 @@
     if (e.touches.length === 1) {
       isDragging = true;
       prevPointer = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      if (!handTrackingActive) {
+        targetSqueeze = 0.45;
+      }
     }
   }, { passive: true });
 
@@ -293,6 +308,9 @@
 
   window.addEventListener('touchend', () => {
     isDragging = false;
+    if (!handTrackingActive) {
+      targetSqueeze = 0;
+    }
   });
 
   // Resize
@@ -331,6 +349,29 @@
     currentRotation.x += (targetRotation.x - currentRotation.x) * lerpSpeed;
     currentRotation.y += (targetRotation.y - currentRotation.y) * lerpSpeed;
     currentRotation.z += (targetRotation.z - currentRotation.z) * lerpSpeed;
+
+    // Damped harmonic spring for squeeze squash & stretch
+    const springK = 0.22;
+    const damping = 0.78;
+    squeezeVelocity += (targetSqueeze - currentSqueeze) * springK;
+    squeezeVelocity *= damping;
+    currentSqueeze += squeezeVelocity;
+
+    if (currentModel) {
+      // Squash & Stretch deformation:
+      // X narrows (squishes cheeks inwards)
+      // Y compresses downwards (squashes vertically)
+      // Z pushes outwards (preserves natural volume)
+      const sqX = 1 - 0.28 * currentSqueeze;
+      const sqY = 1 - 0.32 * currentSqueeze;
+      const sqZ = 1 + 0.22 * currentSqueeze;
+
+      currentModel.scale.set(
+        baseModelScale.x * sqX,
+        baseModelScale.y * sqY,
+        baseModelScale.z * sqZ
+      );
+    }
 
     headGroup.rotation.x = currentRotation.x;
     headGroup.rotation.y = currentRotation.y;
@@ -386,27 +427,45 @@
       const palmX = (wrist.x + indexMcp.x + middleMcp.x + pinkyMcp.x) / 4;
       const palmY = (wrist.y + indexMcp.y + middleMcp.y + pinkyMcp.y) / 4;
 
+      // Squeeze Detection: calculate distance of fingertips to palm center
+      // Finger tips: 4 (thumb), 8 (index), 12 (middle), 16 (ring), 20 (pinky)
+      const tips = [landmarks[4], landmarks[8], landmarks[12], landmarks[16], landmarks[20]];
+      let totalTipDist = 0;
+      for (let i = 0; i < tips.length; i++) {
+        const dX = tips[i].x - palmX;
+        const dY = tips[i].y - palmY;
+        totalTipDist += Math.sqrt(dX * dX + dY * dY);
+      }
+      const avgTipDist = totalTipDist / tips.length;
+
+      // When hand is open, avg distance is ~0.34+; clenched fist is ~0.14 or less
+      const openThreshold = 0.35;
+      const fistThreshold = 0.14;
+      const rawSqueeze = (openThreshold - avgTipDist) / (openThreshold - fistThreshold);
+      targetSqueeze = THREE.MathUtils.clamp(rawSqueeze, 0, 1);
+
       // Draw tracking indicator on PiP canvas
       if (canvasCtx) {
         const cx = palmX * pipCanvas.width;
         const cy = palmY * pipCanvas.height;
 
-        // Glowing palm point
+        // Visual feedback circle on palm: contracts and turns pink/purple when squeezing!
+        const indicatorRadius = Math.max(5, 14 * (1 - 0.45 * targetSqueeze));
         canvasCtx.beginPath();
-        canvasCtx.arc(cx, cy, 14, 0, Math.PI * 2);
-        canvasCtx.fillStyle = 'rgba(16, 185, 129, 0.3)';
+        canvasCtx.arc(cx, cy, indicatorRadius + 6, 0, Math.PI * 2);
+        canvasCtx.fillStyle = targetSqueeze > 0.35 ? 'rgba(236, 72, 153, 0.35)' : 'rgba(16, 185, 129, 0.25)';
         canvasCtx.fill();
 
         canvasCtx.beginPath();
-        canvasCtx.arc(cx, cy, 6, 0, Math.PI * 2);
-        canvasCtx.fillStyle = '#10b981';
+        canvasCtx.arc(cx, cy, indicatorRadius, 0, Math.PI * 2);
+        canvasCtx.fillStyle = targetSqueeze > 0.35 ? '#ec4899' : '#10b981';
         canvasCtx.fill();
 
         // Line to wrist
         canvasCtx.beginPath();
         canvasCtx.moveTo(cx, cy);
         canvasCtx.lineTo(wrist.x * pipCanvas.width, wrist.y * pipCanvas.height);
-        canvasCtx.strokeStyle = 'rgba(16, 185, 129, 0.6)';
+        canvasCtx.strokeStyle = targetSqueeze > 0.35 ? 'rgba(236, 72, 153, 0.7)' : 'rgba(16, 185, 129, 0.6)';
         canvasCtx.lineWidth = 2;
         canvasCtx.stroke();
       }
@@ -426,11 +485,17 @@
       targetRotation.z = THREE.MathUtils.clamp(-tiltAngle * 0.35, -0.4, 0.4);
 
       // Status updates
-      if (handStatusText) handStatusText.textContent = 'Hand active • Move to turn';
-      if (pipStatusText) pipStatusText.textContent = 'Hand detected ✓';
+      if (targetSqueeze > 0.35) {
+        if (handStatusText) handStatusText.textContent = 'Squeezing face! ✊ (Open hand to release)';
+        if (pipStatusText) pipStatusText.textContent = 'Squeezing! ✊';
+      } else {
+        if (handStatusText) handStatusText.textContent = 'Hand active • Squeeze fist to squash';
+        if (pipStatusText) pipStatusText.textContent = 'Hand detected ✓';
+      }
       if (pipStatusDot) pipStatusDot.classList.add('active');
       if (handToggleBtn) handToggleBtn.classList.add('tracking');
     } else {
+      targetSqueeze = 0;
       // No hand in view
       if (performance.now() - lastHandDetectedTime > 1200) {
         if (handStatusText) handStatusText.textContent = 'Hold hand in front of camera';
@@ -543,6 +608,7 @@
 
     // Re-center smoothly
     targetRotation = { x: 0, y: 0, z: 0 };
+    targetSqueeze = 0;
   }
 
   if (handToggleBtn) {
