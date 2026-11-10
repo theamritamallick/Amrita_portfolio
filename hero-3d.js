@@ -155,30 +155,43 @@
 
   // 3. Load Model (amrita.glb if available; fallback bust if not)
   function loadModel() {
+    // Start with fallback bust so scene is never blank
+    useFallbackBust();
+
     if (typeof THREE.GLTFLoader !== 'undefined') {
       const loader = new THREE.GLTFLoader();
+      const badge = document.getElementById('modelStatusBadge');
+      if (badge) {
+        badge.innerHTML = '<span>•</span> Loading 3D Face...';
+      }
+
       loader.load(
         'assets/amrita.glb',
         (gltf) => {
-          console.log('Custom amrita.glb model loaded successfully!');
+          console.log('Custom amrita.glb loaded successfully!');
           while (headGroup.children.length > 0) {
             headGroup.remove(headGroup.children[0]);
           }
           const model = gltf.scene;
 
           const box = new THREE.Box3().setFromObject(model);
+          const center = new THREE.Vector3();
+          box.getCenter(center);
           const size = box.getSize(new THREE.Vector3());
-          const center = box.getCenter(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 2.4 / maxDim;
+          const scale = 2.5 / maxDim;
 
           model.scale.set(scale, scale, scale);
-          model.position.sub(center.multiplyScalar(scale));
+          model.position.set(-center.x * scale, -center.y * scale + 0.1, -center.z * scale);
 
           model.traverse((child) => {
             if (child.isMesh) {
               child.castShadow = true;
               child.receiveShadow = true;
+              if (child.material) {
+                child.material.roughness = Math.min(child.material.roughness || 0.6, 0.7);
+                child.material.needsUpdate = true;
+              }
             }
           });
 
@@ -186,13 +199,20 @@
           currentModel = model;
           updateModelBadge(true);
         },
-        undefined,
-        () => {
-          useFallbackBust();
+        (xhr) => {
+          if (xhr.lengthComputable && xhr.total > 0) {
+            const pct = Math.round((xhr.loaded / xhr.total) * 100);
+            const badgeEl = document.getElementById('modelStatusBadge');
+            if (badgeEl) {
+              badgeEl.innerHTML = `<span>•</span> Loading 3D Face (${pct}%)`;
+            }
+          }
+        },
+        (err) => {
+          console.warn('amrita.glb not loaded, using fallback origami bust:', err);
+          updateModelBadge(false);
         }
       );
-    } else {
-      useFallbackBust();
     }
   }
 
@@ -210,10 +230,10 @@
     const badge = document.getElementById('modelStatusBadge');
     if (badge) {
       if (isCustom) {
-        badge.innerHTML = '<span>•</span> Custom 3D Face Active';
+        badge.innerHTML = '<span>•</span> 3D Face Active';
         badge.classList.add('is-custom');
       } else {
-        badge.innerHTML = '<span>•</span> 3D Origami Face • Drop amrita.glb to replace';
+        badge.innerHTML = '<span>•</span> 3D Origami Face';
         badge.classList.remove('is-custom');
       }
     }
