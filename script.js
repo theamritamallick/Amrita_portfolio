@@ -353,8 +353,37 @@ document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
   }
 
   // Homepage cards
-  setupLottie('lottie-prototype-hero', 'assets/videos/Prototype-homepage.json');
   setupLottie('lottie-icici-cib', 'assets/videos/Scene-2-FD.json');
   // Case study hero
   setupLottie('lottie-cib-hero', '../../assets/videos/Scene-2-FD.json');
+})();
+
+// Ensure portfolio videos autoplay reliably across browsers and devices
+(function initProjectVideos() {
+  function startVideos() {
+    const videos = document.querySelectorAll('.project-media-wrapper video');
+    videos.forEach((video) => {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          const playOnGesture = () => {
+            video.play();
+            window.removeEventListener('scroll', playOnGesture);
+            window.removeEventListener('touchstart', playOnGesture);
+            window.removeEventListener('click', playOnGesture);
+          };
+          window.addEventListener('scroll', playOnGesture, { passive: true, once: true });
+          window.addEventListener('touchstart', playOnGesture, { passive: true, once: true });
+          window.addEventListener('click', playOnGesture, { passive: true, once: true });
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startVideos);
+  } else {
+    startVideos();
+  }
 })();
