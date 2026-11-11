@@ -23,23 +23,23 @@
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 1.15;
   container.appendChild(renderer.domElement);
 
-  // Lighting (Studio papercraft lighting)
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  // Lighting (Studio Dark dramatic portrait lighting)
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
   scene.add(ambientLight);
 
-  const keyLight = new THREE.DirectionalLight(0xfff7ed, 1.4);
+  const keyLight = new THREE.DirectionalLight(0xffffff, 1.45);
   keyLight.position.set(4, 5, 4);
   keyLight.castShadow = true;
   scene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0xdbeafe, 0.7);
+  const fillLight = new THREE.DirectionalLight(0x93c5fd, 0.85);
   fillLight.position.set(-4, -2, 2);
   scene.add(fillLight);
 
-  const rimLight = new THREE.DirectionalLight(0xfef3c7, 0.9);
+  const rimLight = new THREE.DirectionalLight(0xffffff, 1.4);
   rimLight.position.set(0, 4, -4);
   scene.add(rimLight);
 

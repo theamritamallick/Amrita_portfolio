@@ -28,23 +28,23 @@
 }
 
 :root {
-  --bg-color: #e6eef6; 
-  --orb-color-1: rgba(180, 195, 215, 0.6); 
-  --orb-color-2: rgba(220, 230, 240, 0.6); 
+  --bg-color: #090a0f; 
+  --orb-color-1: rgba(30, 41, 59, 0.4); 
+  --orb-color-2: rgba(15, 23, 42, 0.4); 
   
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-bg-hover: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.9);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
-  --glass-shadow-hover: 0 24px 50px rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-bg-hover: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --glass-shadow-hover: 0 24px 50px rgba(0, 0, 0, 0.6);
   --glass-blur: 24px;
   
-  --text-dark: #0f172a;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
+  --text-dark: #ffffff;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
   
-  --action-bg: #0f172a;
-  --action-text: #ffffff;
+  --action-bg: #ffffff;
+  --action-text: #090a0f;
   
   --radius-xl: 32px;
   --radius-lg: 24px;
@@ -89,7 +89,7 @@ a {
   pointer-events: none;
   z-index: -2;
   overflow: hidden;
-  background: var(--bg-color);
+  background: radial-gradient(circle at 35% -10%, #151d2f 0%, #090a0f 55%, #050608 100%);
 }
 
 
@@ -231,8 +231,8 @@ main {
   height: 200vh;
   top: -50vh;
   left: -50vw;
-  background-image: radial-gradient(rgba(15, 23, 42, 0.15) 2px, transparent 2px);
-  background-size: 30px 30px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
   animation: waveDrift 60s linear infinite;
   mask-image: radial-gradient(ellipse at center, black 0%, transparent 60%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 60%);
