@@ -496,10 +496,10 @@
 
       // Status updates
       if (targetSqueeze > 0.35) {
-        if (handStatusText) handStatusText.textContent = 'Squeezing face! ✊ (Open hand to release)';
+        if (handStatusText) handStatusText.textContent = 'Squeezing! ✊';
         if (pipStatusText) pipStatusText.textContent = 'Squeezing! ✊';
       } else {
-        if (handStatusText) handStatusText.textContent = 'Hand active • Squeeze fist to squash';
+        if (handStatusText) handStatusText.textContent = 'Tracking hand ✓';
         if (pipStatusText) pipStatusText.textContent = 'Hand detected ✓';
       }
       if (pipStatusDot) pipStatusDot.classList.add('active');
@@ -508,7 +508,7 @@
       targetSqueeze = 0;
       // No hand in view
       if (performance.now() - lastHandDetectedTime > 1200) {
-        if (handStatusText) handStatusText.textContent = 'Hold hand in front of camera';
+        if (handStatusText) handStatusText.textContent = 'Hold hand up';
         if (pipStatusText) pipStatusText.textContent = 'Waiting for hand...';
         if (pipStatusDot) pipStatusDot.classList.remove('active');
         if (handToggleBtn) handToggleBtn.classList.remove('tracking');
@@ -539,7 +539,7 @@
   async function initHandTracking() {
     if (!videoElement) return;
 
-    if (handStatusText) handStatusText.textContent = 'Requesting camera...';
+    if (handStatusText) handStatusText.textContent = 'Requesting...';
 
     try {
       // 1. Get webcam stream
@@ -561,7 +561,7 @@
 
       // 2. Initialize MediaPipe Hands if not ready
       if (!handModel && typeof Hands !== 'undefined') {
-        if (handStatusText) handStatusText.textContent = 'Loading AI model...';
+        if (handStatusText) handStatusText.textContent = 'Loading AI...';
         handModel = new Hands({
           locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/${file}`,
         });
@@ -580,13 +580,13 @@
       handTrackingActive = true;
       if (pipContainer) pipContainer.classList.add('active');
       if (handToggleBtn) handToggleBtn.classList.add('active');
-      if (handStatusText) handStatusText.textContent = 'Hold hand in front of camera';
+      if (handStatusText) handStatusText.textContent = 'Hold hand up';
 
       // 4. Start frame loop
       animFrameId = requestAnimationFrame(runDetectionLoop);
     } catch (err) {
       console.error('Webcam error:', err);
-      if (handStatusText) handStatusText.textContent = 'Camera blocked (Click to retry)';
+      if (handStatusText) handStatusText.textContent = 'Camera blocked';
       if (pipContainer) pipContainer.classList.remove('active');
       if (handToggleBtn) handToggleBtn.classList.remove('active', 'tracking');
       handTrackingActive = false;
@@ -614,7 +614,7 @@
     if (pipContainer) pipContainer.classList.remove('active');
     if (handToggleBtn) handToggleBtn.classList.remove('active', 'tracking');
     if (pipStatusDot) pipStatusDot.classList.remove('active');
-    if (handStatusText) handStatusText.textContent = 'Camera off • Mouse control active';
+    if (handStatusText) handStatusText.textContent = 'Move & squeeze';
 
     // Re-center smoothly
     targetRotation = { x: 0, y: 0, z: 0 };
