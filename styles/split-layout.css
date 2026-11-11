@@ -1,0 +1,627 @@
+/* ==========================================================================
+   Split Layout (Mayank Kinger inspired Portfolio Layout)
+   - Left Sidebar: Sticky anchored branding, bio, actions, 3D face scan, links
+   - Right Main Feed: Top craft bar, large visual project cards, about & footer
+   - Light Glass Theme: Calm light blues, frosted glass, refined shadows
+   ========================================================================== */
+
+/* Global Wrapper */
+.portfolio-split-wrapper {
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 36px 44px 100px;
+  display: grid;
+  grid-template-columns: 460px minmax(0, 1fr);
+  gap: 56px;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LEFT SIDEBAR (Sticky Anchored Column)
+   ========================================= */
+.portfolio-sidebar {
+  position: sticky;
+  top: 32px;
+  height: calc(100vh - 64px);
+  max-height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 20;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand-group {
+  margin-bottom: 8px;
+}
+
+.sidebar-brand {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.brand-dot {
+  color: #3b82f6;
+}
+
+.sidebar-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 4px 0 0;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-bio {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+
+.sidebar-bio strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Quick Action Buttons */
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sidebar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.sidebar-btn-solid {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+}
+
+.sidebar-btn-solid:hover {
+  background: #1e293b;
+  border-color: #1e293b;
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.sidebar-btn-outline {
+  background: rgba(255, 255, 255, 0.7);
+  color: #1e293b;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.sidebar-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(15, 23, 42, 0.3);
+  transform: translateY(-1px);
+}
+
+/* 3D Face Viewport in Sidebar */
+.sidebar-3d-card {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 14px;
+  flex-shrink: 0;
+}
+
+.sidebar-3d-card .hero-3d-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.sidebar-3d-card canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  outline: none;
+}
+
+.sidebar-3d-card .model-status-badge {
+  top: 12px;
+  left: 12px;
+  right: auto;
+  font-size: 0.68rem;
+  padding: 4px 10px;
+}
+
+/* Hand Control trigger inside sidebar */
+.sidebar-hand-card {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  user-select: none;
+}
+
+.sidebar-hand-card:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+  transform: translateY(-1px);
+}
+
+.sidebar-hand-card.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.sidebar-hand-card.tracking {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.sidebar-hand-card .hand-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sidebar-hand-card.active .hand-icon-box {
+  background: #2563eb;
+}
+
+.sidebar-hand-card.tracking .hand-icon-box {
+  background: #059669;
+}
+
+.sidebar-hand-card .hand-control-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebar-hand-card .hand-control-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.sidebar-hand-card .hand-control-sub {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Position Mini Webcam Preview inside Sidebar 3D card */
+.sidebar-3d-card .webcam-preview-pip {
+  top: 12px;
+  right: 12px;
+  bottom: auto;
+  left: auto;
+  width: 110px;
+  height: 82px;
+}
+
+/* Sidebar Social / Resume Links (like Mayank's screenshot) */
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.sidebar-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-links-list li a,
+.sidebar-links-list li button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.sidebar-links-list li a .arrow,
+.sidebar-links-list li button .arrow {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-links-list li a:hover,
+.sidebar-links-list li button:hover {
+  color: #0f172a;
+}
+
+.sidebar-links-list li a:hover .arrow,
+.sidebar-links-list li button:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   RIGHT COLUMN (Main Projects Feed)
+   ========================================= */
+.portfolio-main-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+/* Top Craft Tags Bar */
+.feed-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 18px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.feed-craft-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.feed-craft-tags .dot {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.feed-nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feed-nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.feed-nav-link:hover {
+  color: var(--text-dark);
+}
+
+.feed-nav-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.feed-nav-cta:hover {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.3);
+}
+
+/* Big Project Cards */
+.feed-project-card {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 38px !important;
+  border-radius: 28px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.04);
+}
+
+.feed-project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+.feed-project-card .bento-grid {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.feed-project-card .project-content {
+  width: 100%;
+}
+
+.project-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.project-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.09);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.feed-project-card .project-content h3 {
+  font-family: 'Canela', serif;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.feed-project-card .project-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 24px;
+}
+
+.feed-project-card .project-content li {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.feed-project-card .project-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.feed-project-card .project-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 24px !important;
+}
+
+.feed-project-card .metric {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.02);
+}
+
+.feed-project-card .metric span {
+  display: block;
+  font-family: 'Canela', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.feed-project-card .metric p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.feed-project-card .project-btn {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.feed-project-card .project-btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  color: #ffffff;
+}
+
+/* About & Capabilities inside Feed */
+.about-section-feed {
+  padding: 10px 0 0;
+}
+
+.about-section-feed .about-minimalist-pill {
+  width: 100%;
+}
+
+.learning-section-feed {
+  padding: 20px 0 0;
+}
+
+.learning-section-feed .learning-header {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.learning-section-feed .learning-header h2 {
+  font-family: 'Canela', serif;
+  font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.learning-section-feed .learning-header p {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.learning-section-feed .learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.footer-feed {
+  padding: 32px 0 20px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  color: #64748b;
+  font-size: 0.88rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================= */
+@media (max-width: 1100px) {
+  .portfolio-split-wrapper {
+    grid-template-columns: 390px minmax(0, 1fr);
+    gap: 36px;
+    padding: 28px 24px 60px;
+  }
+  
+  .sidebar-3d-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-split-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 24px 18px 60px;
+  }
+
+  .portfolio-sidebar {
+    position: static;
+    height: auto;
+    max-height: none;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding-bottom: 32px;
+  }
+
+  .sidebar-3d-card {
+    height: 300px;
+    margin: 20px 0;
+  }
+
+  .sidebar-bottom {
+    margin-top: 16px;
+  }
+
+  .sidebar-links-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .feed-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .feed-project-card {
+    padding: 24px !important;
+  }
+
+  .footer-feed {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

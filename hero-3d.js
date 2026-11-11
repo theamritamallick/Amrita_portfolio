@@ -11,12 +11,14 @@
   if (!container) return;
 
   // 1. Three.js Scene Setup
+  const initialWidth = container.clientWidth || 400;
+  const initialHeight = container.clientHeight || 320;
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(38, container.clientWidth / container.clientHeight, 0.1, 1000);
+  const camera = new THREE.PerspectiveCamera(38, initialWidth / initialHeight, 0.1, 1000);
   camera.position.set(0, 0, 5.2);
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
-  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setSize(initialWidth, initialHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -318,11 +320,19 @@
     if (!container) return;
     const w = container.clientWidth;
     const h = container.clientHeight;
+    if (w <= 0 || h <= 0) return;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
   }
   window.addEventListener('resize', onResize);
+
+  if (window.ResizeObserver) {
+    const resizeObserver = new ResizeObserver(() => {
+      onResize();
+    });
+    resizeObserver.observe(container);
+  }
 
   // 5. Render Loop with Smooth Spring Physics
   let clock = new THREE.Clock();
