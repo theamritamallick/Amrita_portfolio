@@ -598,6 +598,62 @@
   transform: scale(1.035);
 }
 
+/* Placeholder Project Card (Studio Dark Empty Slot) */
+.project-media-wrapper.placeholder-media {
+  background: rgba(13, 18, 28, 0.55);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.feed-project-card:hover .project-media-wrapper.placeholder-media {
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(18, 24, 38, 0.75);
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.placeholder-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.feed-project-card:hover .placeholder-icon-circle {
+  transform: scale(1.08) rotate(90deg);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.placeholder-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+}
+
+.placeholder-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
 /* Overlay gradient and hover details */
 .card-hover-overlay {
   position: absolute;
@@ -811,10 +867,10 @@
     display: contents; /* Unrolls cards into linear sequence on small screens */
   }
 
-  #case-icici-cib { order: 1; }
-  #case-home-mechanic { order: 2; }
+  #case-upcoming { order: 1; }
+  #case-icici-cib { order: 2; }
   #case-icici-design-system { order: 3; }
-  #case-project-4 { order: 4; }
+  #case-home-mechanic { order: 4; }
 
   .project-media-wrapper.media-tall {
     aspect-ratio: 4 / 4.4;
