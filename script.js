@@ -307,3 +307,53 @@ document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
     });
   });
 })();
+
+// Initialize Lottie Animated Desktop Mockup (Scene-2-FD from Jitter)
+(function initLottieMockups() {
+  function setupLottie(elemId, jsonPath) {
+    const container = document.getElementById(elemId);
+    if (!container) return;
+
+    function start() {
+      if (typeof lottie === 'undefined') {
+        setTimeout(start, 60);
+        return;
+      }
+      try {
+        const anim = lottie.loadAnimation({
+          container: container,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: jsonPath,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true
+          }
+        });
+
+        anim.addEventListener('DOMLoaded', () => {
+          const fallbackImg = container.querySelector('img');
+          if (fallbackImg) fallbackImg.style.display = 'none';
+        });
+
+        anim.addEventListener('data_failed', () => {
+          console.warn('Lottie data failed to load for ' + elemId);
+        });
+      } catch (err) {
+        console.warn('Lottie error for ' + elemId + ':', err);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  }
+
+  // Homepage card
+  setupLottie('lottie-icici-cib', 'assets/videos/Scene-2-FD.json');
+  // Case study hero
+  setupLottie('lottie-cib-hero', '../../assets/videos/Scene-2-FD.json');
+})();
