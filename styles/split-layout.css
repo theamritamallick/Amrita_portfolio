@@ -1,18 +1,18 @@
 /* ==========================================================================
    Split Layout (Mayank Kinger inspired Portfolio Layout)
    - Left Sidebar: Sticky anchored branding, bio, actions, 3D face scan, links
-   - Right Main Feed: Top craft bar, large visual project cards, about & footer
+   - Right Main Feed: Top craft bar, 2-column project cards, about & footer
    - Light Glass Theme: Calm light blues, frosted glass, refined shadows
    ========================================================================== */
 
-/* Global Wrapper */
+/* Global Wrapper - Wide canvas for 2-column projects */
 .portfolio-split-wrapper {
-  max-width: 1540px;
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 36px 44px 100px;
+  padding: 32px 36px 80px;
   display: grid;
-  grid-template-columns: 460px minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 48px;
   position: relative;
   z-index: 10;
   box-sizing: border-box;
@@ -46,12 +46,12 @@
 }
 
 .sidebar-brand-group {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .sidebar-brand {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.9rem, 2.3vw, 2.3rem);
   font-weight: 700;
   color: var(--text-dark);
   letter-spacing: -0.03em;
@@ -64,7 +64,7 @@
 }
 
 .sidebar-role {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: #64748b;
   margin: 4px 0 0;
@@ -72,10 +72,10 @@
 }
 
 .sidebar-bio {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 12px 0 18px;
+  line-height: 1.58;
+  margin: 12px 0 16px;
 }
 
 .sidebar-bio strong {
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .sidebar-btn {
@@ -96,9 +96,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 9px 18px;
+  padding: 8px 16px;
   border-radius: 999px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
   font-family: inherit;
@@ -137,7 +137,7 @@
 .sidebar-3d-card {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 370px;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -145,7 +145,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
-  margin: 6px 0 16px;
+  margin: 4px 0 12px;
   flex-shrink: 0;
 }
 
@@ -273,7 +273,7 @@
 /* Sidebar Social / Resume Links (like Mayank's screenshot) */
 .sidebar-bottom {
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .sidebar-links-list {
@@ -282,7 +282,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
 }
 
 .sidebar-links-list li a,
@@ -290,7 +290,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #64748b;
   text-decoration: none;
@@ -324,7 +324,7 @@
 .portfolio-main-feed {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -336,7 +336,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 0 18px;
+  padding: 6px 0 16px;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
@@ -392,138 +392,137 @@
   border-color: rgba(15, 23, 42, 0.3);
 }
 
-/* Big Project Cards */
+/* =========================================
+   PROJECTS 2-COLUMN GRID (Mayank Kinger inspired)
+   ========================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
 .feed-project-card {
   display: flex !important;
   flex-direction: column !important;
-  padding: 38px !important;
-  border-radius: 28px !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 24px !important;
+  border-radius: 24px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
 }
 
 .feed-project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
+  border-color: rgba(255, 255, 255, 0.95);
 }
 
-.feed-project-card .bento-grid {
+/* Single Showcase Image Container */
+.project-card-image {
+  position: relative;
   width: 100%;
-  margin-bottom: 28px;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(220, 230, 242, 0.35);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  margin-bottom: 18px;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feed-project-card:hover .project-card-image img {
+  transform: scale(1.04);
 }
 
 .feed-project-card .project-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
 }
 
-.project-header-row {
+.feed-project-card .project-header-row {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
-.project-badge {
+.feed-project-card .project-badge {
   display: inline-block;
   align-self: flex-start;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: #2563eb;
-  background: rgba(37, 99, 235, 0.09);
-  padding: 4px 12px;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 3px 10px;
   border-radius: 999px;
 }
 
 .feed-project-card .project-content h3 {
   font-family: 'Canela', serif;
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.4rem, 1.8vw, 1.65rem);
   font-weight: 600;
   margin: 0;
   color: var(--text-dark);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
-.feed-project-card .project-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0 24px;
-}
-
-.feed-project-card .project-content li {
-  font-size: 1rem;
+.project-summary {
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 18px;
-}
-
-.feed-project-card .project-content li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #3b82f6;
-  font-weight: bold;
-}
-
-.feed-project-card .project-metrics {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)) !important;
-  gap: 14px !important;
-  margin-top: 24px !important;
-}
-
-.feed-project-card .metric {
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 18px;
-  padding: 16px 18px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.02);
-}
-
-.feed-project-card .metric span {
-  display: block;
-  font-family: 'Canela', serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 4px;
-}
-
-.feed-project-card .metric p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-  margin: 0;
+  line-height: 1.55;
+  margin: 8px 0 20px;
+  flex-grow: 1;
 }
 
 .feed-project-card .project-btn {
-  margin-top: 28px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 9px 18px;
   border-radius: 999px;
   background: #0f172a;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   text-decoration: none;
   transition: all 0.2s ease;
+  margin-top: auto;
   align-self: flex-start;
+  line-height: 1;
 }
 
 .feed-project-card .project-btn:hover {
   background: #1e293b;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+  color: #ffffff !important;
+}
+
+.feed-project-card .project-btn .arrow {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.feed-project-card .project-btn:hover .arrow {
+  transform: translate(2px, -2px);
 }
 
 /* About & Capabilities inside Feed */
@@ -536,12 +535,12 @@
 }
 
 .learning-section-feed {
-  padding: 20px 0 0;
+  padding: 10px 0 0;
 }
 
 .learning-section-feed .learning-header {
   text-align: left;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .learning-section-feed .learning-header h2 {
@@ -564,7 +563,7 @@
 }
 
 .footer-feed {
-  padding: 32px 0 20px;
+  padding: 28px 0 20px;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
   color: #64748b;
   font-size: 0.88rem;
@@ -576,23 +575,23 @@
 /* =========================================
    RESPONSIVE DESIGN (Tablets & Mobile)
    ========================================= */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .portfolio-split-wrapper {
-    grid-template-columns: 390px minmax(0, 1fr);
-    gap: 36px;
-    padding: 28px 24px 60px;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 32px;
+    padding: 24px 20px 60px;
   }
-  
-  .sidebar-3d-card {
-    height: 280px;
+
+  .projects-grid {
+    gap: 20px;
   }
 }
 
 @media (max-width: 900px) {
   .portfolio-split-wrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 24px 18px 60px;
+    gap: 36px;
+    padding: 20px 16px 60px;
   }
 
   .portfolio-sidebar {
@@ -600,16 +599,21 @@
     height: auto;
     max-height: none;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    padding-bottom: 32px;
+    padding-bottom: 28px;
   }
 
   .sidebar-3d-card {
-    height: 300px;
-    margin: 20px 0;
+    height: 320px;
+    margin: 16px 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .sidebar-bottom {
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   .sidebar-links-list {
@@ -625,7 +629,7 @@
   }
 
   .feed-project-card {
-    padding: 24px !important;
+    padding: 20px !important;
   }
 
   .footer-feed {
