@@ -88,9 +88,9 @@
         </div>
       </div>
 
-      <!-- Sidebar Social / Resume Links -->
+      <!-- Sidebar Social / Resume Links & Dynamic Project Preview on Hover -->
       <div class="sidebar-bottom">
-        <ul class="sidebar-links-list">
+        <ul class="sidebar-links-list" id="sidebarLinksList">
           <li>
             <a href="https://www.linkedin.com/in/theamritamallick/" target="_blank" rel="noopener noreferrer">
               LinkedIn <span class="arrow">↗</span>
@@ -112,6 +112,26 @@
             </button>
           </li>
         </ul>
+
+        <!-- Dynamic Project Details on Card Hover (Mayank Kinger inspired) -->
+        <div class="sidebar-project-preview" id="sidebarProjectPreview" aria-hidden="true">
+          <p class="preview-description" id="previewDescription">
+            Project narrative details appear here.
+          </p>
+          <div class="preview-footer">
+            <div class="preview-icon" id="previewIcon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="preview-meta">
+              <span class="preview-title" id="previewTitle">Project Title</span>
+              <span class="preview-tag" id="previewTag">2026, ENTERPRISE DESIGN</span>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -136,84 +156,100 @@
         </div>
       </div>
 
-      <!-- Projects 2-Column Grid -->
+      <!-- Projects 2-Column Grid (Chic Edge-to-Edge Media) -->
       <div class="projects-grid">
 
         <!-- PROJECT 1: ICICI Corporate Banking -->
-        <article class="feed-project-card glass-panel" id="case-icici-cib">
-          <div class="project-card-image">
+        <a href="case-studies/icici-cib-banking-saas/index.html" 
+           class="feed-project-card" 
+           id="case-icici-cib"
+           data-preview-desc="Redesigned enterprise fixed deposit booking to reduce multi-step decision friction and double booking velocity in high-stakes financial workflows."
+           data-preview-title="ICICI Corporate Banking"
+           data-preview-tag="2026, ENTERPRISE FINTECH">
+          <div class="project-media-wrapper">
             <img src="assets/images/CIB/FD.webp" alt="ICICI Corporate Banking Dashboard" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <span class="project-badge">Enterprise Fintech</span>
-              <h3>ICICI Corporate Banking</h3>
+            <div class="card-hover-overlay">
+              <div class="card-corner-info">
+                <span class="card-corner-badge">Enterprise Fintech</span>
+                <h3 class="card-corner-title">ICICI Corporate Banking</h3>
+              </div>
+              <span class="card-cta-pill">View case study <span class="arrow">↗</span></span>
             </div>
-            <p class="project-summary">
-              Redesigned enterprise fixed deposit booking to reduce multi-step decision friction and double booking velocity in high-stakes financial workflows.
-            </p>
-            <a href="case-studies/icici-cib-banking-saas/index.html" class="project-btn">
-              View case study <span class="arrow">↗</span>
-            </a>
           </div>
-        </article>
+          <div class="project-card-caption">
+            <strong class="caption-name">ICICI Corporate Banking</strong>
+            <span class="caption-desc">An enterprise-ready platform for financial workflows.</span>
+          </div>
+        </a>
 
         <!-- PROJECT 2: Home Mechanic CRM -->
-        <article class="feed-project-card glass-panel" id="case-home-mechanic">
-          <div class="project-card-image">
+        <a href="case-studies/home-mechanic-crm/index.html" 
+           class="feed-project-card" 
+           id="case-home-mechanic"
+           data-preview-desc="0-to-1 CRM system replacing scattered spreadsheets with structured lead tracking, pipeline visibility, and automated customer follow-ups."
+           data-preview-title="Home Mechanic CRM"
+           data-preview-tag="2026, B2B SAAS">
+          <div class="project-media-wrapper">
             <img src="assets/images/CRM/Mockup_crm.webp" alt="Home Mechanic CRM Interface" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <span class="project-badge">B2B SaaS</span>
-              <h3>Home Mechanic CRM</h3>
+            <div class="card-hover-overlay">
+              <div class="card-corner-info">
+                <span class="card-corner-badge">B2B SaaS</span>
+                <h3 class="card-corner-title">Home Mechanic CRM</h3>
+              </div>
+              <span class="card-cta-pill">View case study <span class="arrow">↗</span></span>
             </div>
-            <p class="project-summary">
-              End-to-end 0-to-1 CRM system replacing scattered spreadsheets with structured lead tracking, pipeline visibility, and automated customer follow-ups.
-            </p>
-            <a href="case-studies/home-mechanic-crm/index.html" class="project-btn">
-              View case study <span class="arrow">↗</span>
-            </a>
           </div>
-        </article>
+          <div class="project-card-caption">
+            <strong class="caption-name">Home Mechanic CRM</strong>
+            <span class="caption-desc">Streamlining automotive lead tracking and follow-up efficiency.</span>
+          </div>
+        </a>
 
         <!-- PROJECT 3: ICICI Design System -->
-        <article class="feed-project-card glass-panel" id="case-icici-design-system">
-          <div class="project-card-image">
+        <a href="case-studies/icici-design-system/index.html" 
+           class="feed-project-card" 
+           id="case-icici-design-system"
+           data-preview-desc="Scalable design tokens, multi-tier navigation systems, and accessible component architecture built for high-scale enterprise banking."
+           data-preview-title="ICICI Design System"
+           data-preview-tag="2026, DESIGN ENGINEERING">
+          <div class="project-media-wrapper">
             <img src="assets/images/CIB/FD-dashboard.webp" alt="ICICI Banking Design System" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <span class="project-badge">Design Systems</span>
-              <h3>ICICI Design System</h3>
+            <div class="card-hover-overlay">
+              <div class="card-corner-info">
+                <span class="card-corner-badge">Design Systems</span>
+                <h3 class="card-corner-title">ICICI Design System</h3>
+              </div>
+              <span class="card-cta-pill">View case study <span class="arrow">↗</span></span>
             </div>
-            <p class="project-summary">
-              Scalable design tokens, multi-tier navigation systems, and accessible component architecture built for high-scale enterprise banking.
-            </p>
-            <a href="case-studies/icici-design-system/index.html" class="project-btn">
-              View case study <span class="arrow">↗</span>
-            </a>
           </div>
-        </article>
+          <div class="project-card-caption">
+            <strong class="caption-name">ICICI Design System</strong>
+            <span class="caption-desc">Design tokens and component architecture for enterprise banking.</span>
+          </div>
+        </a>
 
         <!-- PROJECT 4: Workflow Analytics & Insights -->
-        <article class="feed-project-card glass-panel" id="case-project-4">
-          <div class="project-card-image">
+        <a href="#contact" 
+           class="feed-project-card contact-trigger" 
+           id="case-project-4"
+           data-preview-desc="High-density reporting dashboards and operational workflows engineered to reduce cognitive load across daily enterprise operations."
+           data-preview-title="Workflow Analytics & Insights"
+           data-preview-tag="2026, PRODUCT STRATEGY">
+          <div class="project-media-wrapper">
             <img src="assets/images/CRM/decision-3.webp" alt="Workflow Analytics & Insights" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <span class="project-badge">Product Strategy</span>
-              <h3>Workflow Analytics &amp; Insights</h3>
+            <div class="card-hover-overlay">
+              <div class="card-corner-info">
+                <span class="card-corner-badge">Product Strategy</span>
+                <h3 class="card-corner-title">Workflow Analytics</h3>
+              </div>
+              <span class="card-cta-pill">View case study <span class="arrow">↗</span></span>
             </div>
-            <p class="project-summary">
-              High-density reporting dashboards and operational workflows engineered to reduce cognitive load across daily enterprise operations.
-            </p>
-            <a href="#contact" class="project-btn contact-trigger">
-              View case study <span class="arrow">↗</span>
-            </a>
           </div>
-        </article>
+          <div class="project-card-caption">
+            <strong class="caption-name">Workflow Analytics</strong>
+            <span class="caption-desc">High-density reporting and pipeline insights for enterprise scale.</span>
+          </div>
+        </a>
 
       </div>
 

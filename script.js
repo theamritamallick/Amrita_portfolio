@@ -273,3 +273,37 @@ document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
     }
   });
 });
+
+// Dynamic Project Hover Details in Sidebar Bottom (Mayank Kinger inspired)
+(function initProjectHoverPreview() {
+  const projectCards = document.querySelectorAll(".feed-project-card[data-preview-desc]");
+  const sidebarLinks = document.getElementById("sidebarLinksList");
+  const sidebarPreview = document.getElementById("sidebarProjectPreview");
+  const previewDesc = document.getElementById("previewDescription");
+  const previewTitle = document.getElementById("previewTitle");
+  const previewTag = document.getElementById("previewTag");
+
+  if (!projectCards.length || !sidebarLinks || !sidebarPreview) return;
+
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      const desc = card.getAttribute("data-preview-desc");
+      const title = card.getAttribute("data-preview-title");
+      const tag = card.getAttribute("data-preview-tag");
+
+      if (desc && title && tag) {
+        if (previewDesc) previewDesc.textContent = desc;
+        if (previewTitle) previewTitle.textContent = title;
+        if (previewTag) previewTag.textContent = tag;
+
+        sidebarLinks.classList.add("is-hidden");
+        sidebarPreview.classList.add("is-active");
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      sidebarLinks.classList.remove("is-hidden");
+      sidebarPreview.classList.remove("is-active");
+    });
+  });
+})();
