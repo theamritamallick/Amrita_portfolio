@@ -161,29 +161,30 @@
         <!-- Column 1 (Left) -->
         <div class="projects-column">
 
-          <!-- PROJECT 1: Upcoming Project (Empty / In Progress Placeholder, Greater Length / Tall Card) -->
-          <div class="feed-project-card project-card-placeholder" 
-               id="case-upcoming"
-               data-preview-desc="New case study and enterprise product walkthrough in active development. Stay tuned for the upcoming showcase."
-               data-preview-title="New Project"
-               data-preview-tag="2026, IN PROGRESS">
-            <div class="project-media-wrapper media-tall placeholder-media">
-              <div class="placeholder-content">
-                <div class="placeholder-icon-circle">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
+          <!-- PROJECT 1: Featured New Project (Top Left, Greater Length / Tall Card) -->
+          <a href="#contact" 
+             class="feed-project-card contact-trigger" 
+             id="case-upcoming"
+             data-preview-desc="Next-generation SaaS workflow and product experience engineered for high-velocity teams. Interactive prototype and case study preview."
+             data-preview-title="Workflow Experience"
+             data-preview-tag="2026, SAAS & PRODUCT DESIGN">
+            <div class="project-media-wrapper media-tall">
+              <div id="lottie-prototype-hero" class="project-lottie-anim" aria-label="Animated Prototype Mockup">
+                <img src="assets/images/prototype_thumb.png" alt="Product Prototype Dashboard" loading="lazy" decoding="async" />
+              </div>
+              <div class="card-hover-overlay">
+                <div class="card-corner-info">
+                  <span class="card-corner-badge">New Case Study</span>
+                  <h3 class="card-corner-title">Workflow Experience</h3>
                 </div>
-                <span class="placeholder-label">New Project</span>
-                <span class="placeholder-sub">Case study in progress</span>
+                <span class="card-cta-pill">Preview prototype <span class="arrow">↗</span></span>
               </div>
             </div>
             <div class="project-card-caption">
-              <strong class="caption-name">New Project</strong>
-              <span class="caption-desc">Case study in progress.</span>
+              <strong class="caption-name">New Case Study</strong>
+              <span class="caption-desc">Interactive prototype &bull; Case study coming soon.</span>
             </div>
-          </div>
+          </a>
 
           <!-- PROJECT 3: ICICI Design System (Shorter Card) -->
           <a href="case-studies/icici-design-system/index.html" 

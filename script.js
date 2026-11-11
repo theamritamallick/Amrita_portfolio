@@ -352,7 +352,8 @@ document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
     }
   }
 
-  // Homepage card
+  // Homepage cards
+  setupLottie('lottie-prototype-hero', 'assets/videos/Prototype-homepage.json');
   setupLottie('lottie-icici-cib', 'assets/videos/Scene-2-FD.json');
   // Case study hero
   setupLottie('lottie-cib-hero', '../../assets/videos/Scene-2-FD.json');
