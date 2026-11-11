@@ -166,7 +166,8 @@
   background: transparent !important;
 }
 
-.sidebar-3d-card .model-status-badge {
+.sidebar-3d-card .model-status-badge,
+.hero-3d-sphere {
   display: none !important;
 }
 
