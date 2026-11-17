@@ -19,9 +19,8 @@
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
   renderer.setSize(initialWidth, initialHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.shadowMap.enabled = false;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.15;
   container.appendChild(renderer.domElement);
@@ -32,7 +31,6 @@
 
   const keyLight = new THREE.DirectionalLight(0xffffff, 1.45);
   keyLight.position.set(4, 5, 4);
-  keyLight.castShadow = true;
   scene.add(keyLight);
 
   const fillLight = new THREE.DirectionalLight(0x93c5fd, 0.85);
@@ -193,8 +191,6 @@
 
           model.traverse((child) => {
             if (child.isMesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
               if (child.material) {
                 child.material.roughness = Math.min(child.material.roughness || 0.6, 0.7);
                 child.material.needsUpdate = true;
@@ -268,7 +264,7 @@
       targetRotation.x = -normY * 0.4;
       targetRotation.z = 0;
     }
-  });
+  }, { passive: true });
 
   container.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -334,9 +330,30 @@
     resizeObserver.observe(container);
   }
 
-  // 5. Render Loop with Smooth Spring Physics
+  // 5. Render Loop with Smooth Spring Physics & Visibility Observer
   let clock = new THREE.Clock();
+  let isCanvasVisible = true;
+  let isLoopActive = false;
+
+  if (window.IntersectionObserver) {
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isCanvasVisible = entry.isIntersecting;
+        if (isCanvasVisible && !isLoopActive) {
+          isLoopActive = true;
+          requestAnimationFrame(animate);
+        }
+      });
+    }, { threshold: 0.05 });
+    visibilityObserver.observe(container);
+  }
+
   function animate() {
+    if (!isCanvasVisible) {
+      isLoopActive = false;
+      return;
+    }
+    isLoopActive = true;
     requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
 
