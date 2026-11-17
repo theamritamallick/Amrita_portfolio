@@ -283,13 +283,25 @@ body.editorial-case-study {
   line-height: 1.4;
 }
 
-/* Metrics Metadata Strip (Clean UI matching metadata grid, No Cards) */
-.cs-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+/* Metrics Metadata Section (Clean UI matching metadata grid, No Cards) */
+.cs-metrics-section {
   padding: 20px 0 24px 0;
   border-bottom: 1px solid var(--cs-border);
+}
+
+.cs-metrics-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cs-text-secondary);
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.cs-metrics-grid {
+  display: flex;
+  gap: clamp(48px, 8vw, 96px);
+  align-items: flex-start;
 }
 
 .cs-metric-col {
@@ -646,10 +658,12 @@ body.editorial-case-study {
     gap: 16px;
   }
 
-  .cs-metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .cs-metrics-section {
     padding: 16px 0 20px 0;
+  }
+
+  .cs-metrics-grid {
+    gap: 32px;
   }
 
   .cs-metric-number {
