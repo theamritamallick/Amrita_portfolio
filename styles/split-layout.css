@@ -569,6 +569,7 @@
   display: block;
   transform: scale(1);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
 .feed-project-card:hover .project-media-wrapper img,
@@ -586,6 +587,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .project-media-wrapper .project-lottie-anim img {

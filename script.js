@@ -387,3 +387,16 @@ document.querySelectorAll(".contact-copy-btn").forEach((btn) => {
     startVideos();
   }
 })();
+
+// Ensure project cards navigate reliably across all browsers and devices
+(function initProjectCardLinks() {
+  document.querySelectorAll('a.feed-project-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const href = card.getAttribute('href');
+      if (href && !href.startsWith('#') && !card.classList.contains('contact-trigger')) {
+        if (e.target && e.target.closest && e.target.closest('button.contact-trigger')) return;
+        window.location.href = href;
+      }
+    });
+  });
+})();

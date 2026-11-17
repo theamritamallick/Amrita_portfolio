@@ -1,27 +1,27 @@
 
 @font-face {
   font-family: 'Canela';
-  src: url('../assets/fonts/CanelaTextFamily/CanelaText-Regular-Trial.otf') format('otf');
+  src: url('../assets/Fonts/CanelaTextFamily/CanelaText-Regular-Trial.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Canela';
-  src: url('../assets/fonts/CanelaDeckFamily/CanelaDeck-Medium-Trial.otf') format('otf');
+  src: url('../assets/Fonts/CanelaDeckFamily/CanelaDeck-Medium-Trial.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Canela';
-  src: url('../assets/fonts/CanelaFamily/Canela-Bold-Trial.otf') format('otf');
+  src: url('../assets/Fonts/CanelaFamily/Canela-Bold-Trial.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Canela';
-  src: url('../assets/fonts/CanelaFamily/Canela-BoldItalic-Trial.otf') format('otf');
+  src: url('../assets/Fonts/CanelaFamily/Canela-BoldItalic-Trial.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
 }

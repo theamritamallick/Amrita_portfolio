@@ -74,3 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
     videos.forEach((v) => videoObserver.observe(v));
   }
 });
+
