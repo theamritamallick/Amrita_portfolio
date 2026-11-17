@@ -1022,8 +1022,8 @@
 
   #case-upcoming { order: 1; }
   #case-icici-cib { order: 2; }
-  #case-icici-design-system { order: 3; }
-  #case-home-mechanic { order: 4; }
+  #case-home-mechanic { order: 3; }
+  #case-icici-design-system { order: 4; }
 
   .feed-project-card {
     width: 100% !important;
