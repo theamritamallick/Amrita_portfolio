@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Studio — Case Study | Amrita Mallick</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../../styles/editorial-case-study.css" />
+</head>
+<body class="editorial-case-study">
+
+  <!-- =========================================
+       TOP BREADCRUMB BAR
+       ========================================= -->
+  <header class="cs-top-bar" role="banner">
+    <a href="../../index.html" class="cs-breadcrumb">
+      <span class="back-arrow">←</span> Work <span style="opacity: 0.4;">/</span> <span class="project-title-crumb">Document Studio</span>
+    </a>
+    <div class="cs-top-actions">
+      <a href="../../index.html#contact" class="cs-contact-pill">Get in touch</a>
+    </div>
+  </header>
+
+  <!-- =========================================
+       MAIN 2-COLUMN LAYOUT
+       ========================================= -->
+  <div class="cs-layout-container">
+
+    <!-- LEFT STICKY TABLE OF CONTENTS -->
+    <aside class="cs-toc-sidebar" aria-label="Table of Contents">
+      <ul class="cs-toc-list">
+        <li><a href="#overview" class="cs-toc-link is-active">Overview</a></li>
+        <li><a href="#problem" class="cs-toc-link">The Problem</a></li>
+        <li><a href="#solution" class="cs-toc-link">The Solution</a></li>
+        <li><a href="#core-flows" class="cs-toc-link">Core Flows</a></li>
+        <li><a href="#research" class="cs-toc-link">User Insights</a></li>
+        <li><a href="#prototyping" class="cs-toc-link">Prototyping & Motion</a></li>
+        <li><a href="#decisions" class="cs-toc-link">Design Decisions</a></li>
+        <li><a href="#reflection" class="cs-toc-link">Reflection</a></li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT COLUMN -->
+    <main class="cs-main-content">
+
+      <!-- HERO ARTICLE HEADER -->
+      <section class="cs-article-header">
+        <h1 class="cs-main-title">Rethinking high-velocity document workflows</h1>
+        <p class="cs-main-subtitle">
+          Turning tangled enterprise document drafting, approval chains, and collaboration systems into a calm, unified product experience.
+        </p>
+
+        <!-- Metadata Grid -->
+        <div class="cs-metadata-grid">
+          <div class="cs-meta-col">
+            <span class="cs-meta-label">Role</span>
+            <span class="cs-meta-value">Product Designer &amp; Engineer</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-label">Timeline</span>
+            <span class="cs-meta-value">6 Weeks &bull; 2026</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-label">Scope</span>
+            <span class="cs-meta-value">UX Architecture, UI &amp; Interactive Prototype</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-label">Platform</span>
+            <span class="cs-meta-value">B2B SaaS Desktop &amp; Web</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: OVERVIEW -->
+      <section class="cs-section" id="overview">
+        <span class="cs-section-kicker">Overview</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">What should modern document creation feel like?</h2>
+        </div>
+        <p class="cs-body-p">
+          Enterprise teams spend up to 40% of their workday drafting, revising, and tracking business documents across fragmented suites. Most traditional software treats documents as isolated static pages, forcing users to constantly context-switch between spreadsheets, email threads, and compliance portals.
+        </p>
+        <p class="cs-body-p">
+          <strong>Document Studio</strong> was conceived as a high-performance workspace where live data, structured templates, and intelligent automation live in one cohesive surface. Our goal was to eliminate administrative friction and allow knowledge workers to focus on synthesis and decision-making.
+        </p>
+
+        <!-- Featured Prototype Video Mockup -->
+        <div class="cs-media-card">
+          <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="../../assets/images/prototype_thumb.png">
+            <source src="../../assets/videos/document-studio-prototype.mp4" type="video/mp4" />
+          </video>
+          <div class="cs-media-caption">
+            <strong>Interactive Prototype:</strong> Document Studio canvas showing fluid pane navigation, real-time template switching, and contextual sidebar interactions.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: THE PROBLEM -->
+      <section class="cs-section" id="problem">
+        <span class="cs-section-kicker">The Problem</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">The Document Stack is broken across silos</h2>
+        </div>
+        <p class="cs-body-p">
+          When observing legal, financial, and operations teams, we found that document generation is never an isolated writing task. It is a multi-layered pipeline trapped between rigid legacy software and disconnected communication channels.
+        </p>
+
+        <!-- System Stack Diagram (Like OpenAI "THE STACK" component) -->
+        <div class="cs-stack-diagram">
+          <div style="font-size: 0.78rem; font-weight: 700; color: #9ca3af; letter-spacing: 0.08em; text-transform: uppercase;">
+            &ldquo;THE FRAGMENTED STACK&rdquo;
+          </div>
+          <div style="display: flex; gap: 8px; width: 100%; max-width: 420px; justify-content: center;">
+            <div class="cs-stack-level" style="flex: 1;">Email Chains</div>
+            <div class="cs-stack-level active-stack" style="flex: 1.4;">Document Studio</div>
+            <div class="cs-stack-level" style="flex: 1;">Cloud Storage</div>
+          </div>
+          <div class="cs-stack-level" style="width: 100%; max-width: 480px;">Collaborative Document Canvas</div>
+          <div class="cs-stack-level" style="width: 100%; max-width: 540px;">Real-Time Data Connectors &amp; APIs</div>
+          <div class="cs-stack-level" style="width: 100%; max-width: 600px;">Enterprise Security &amp; Compliance Layer</div>
+        </div>
+
+        <div class="cs-callout-card">
+          <h4>The Core Churn: Context Fragmentation</h4>
+          <p>
+            Users were repeatedly copy-pasting figures between financial calculators, spreadsheets, and Word documents. A single typo meant restarting entire multi-sign-off approval cycles.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: THE SOLUTION -->
+      <section class="cs-section" id="solution">
+        <span class="cs-section-kicker">The Solution</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">A unified canvas with live data synchronization</h2>
+        </div>
+        <p class="cs-body-p">
+          We designed Document Studio with three guiding principles:
+        </p>
+        <div class="cs-insights-grid">
+          <div class="cs-insight-item">
+            <h3 class="cs-insight-title">1. Canvas-First Flexibility</h3>
+            <p class="cs-insight-desc">
+              Moving away from rigid pagination towards modular document blocks that flex dynamically based on content depth and screen real estate.
+            </p>
+          </div>
+          <div class="cs-insight-item">
+            <h3 class="cs-insight-title">2. Zero-Copy Data Binding</h3>
+            <p class="cs-insight-desc">
+              Numbers, charts, and terms link directly to master data repositories, updating in real time with comprehensive change audits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: CORE FLOWS -->
+      <section class="cs-section" id="core-flows">
+        <span class="cs-section-kicker">Core Flows</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">Streamlining drafting to sign-off in four gestures</h2>
+        </div>
+        <p class="cs-body-p">
+          By analyzing the end-to-end journey from initial template selection to final stakeholder distribution, we consolidated 14 distinct legacy dialogs into one unified sidebar drawer with live canvas previews.
+        </p>
+
+        <!-- Side-by-Side Flow Exploration -->
+        <div class="cs-photo-grid-2">
+          <div class="photo-item">
+            <img src="../../assets/images/prototype_thumb.png" alt="Document Studio Workflow Navigation" />
+            <div style="padding: 14px 16px; font-size: 0.88rem; color: #4b5563;">
+              <strong>Step 1: Intelligent Template Matcher</strong><br />
+              Smart tagging surfaces relevant contract clauses based on previous corporate deals.
+            </div>
+          </div>
+          <div class="photo-item">
+            <img src="../../assets/images/prototype_thumb.png" alt="Document Studio Real-Time Synthesis" />
+            <div style="padding: 14px 16px; font-size: 0.88rem; color: #4b5563;">
+              <strong>Step 2: Contextual Sidebar Synthesis</strong><br />
+              Stakeholders review, annotate, and approve clauses without leaving the document viewport.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: USER RESEARCH & INSIGHTS -->
+      <section class="cs-section" id="research">
+        <span class="cs-section-kicker">User Insights</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">Key takeaways from user testing &amp; discovery</h2>
+        </div>
+        <p class="cs-body-p">
+          We conducted contextual inquiries and usability walkthroughs with 12 enterprise product leads and operations specialists. Two central user insights shaped our interaction model:
+        </p>
+
+        <div class="cs-insights-grid">
+          <div class="cs-insight-item">
+            <h3 class="cs-insight-title">Memory for recall, not searching</h3>
+            <p class="cs-insight-desc">
+              Users don't want to dig through complex folder trees. They want contextual suggestions and instant command-palette search directly inside their active drafting flow.
+            </p>
+          </div>
+          <div class="cs-insight-item">
+            <h3 class="cs-insight-title">Surface relevant suggestions in-situ</h3>
+            <p class="cs-insight-desc">
+              Contextual prompts and compliance alerts should appear beside the text at the moment of editing, rather than as a wall of errors at submission time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: PROTOTYPING & MOTION -->
+      <section class="cs-section" id="prototyping">
+        <span class="cs-section-kicker">Prototyping and Testing</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">Testing and iterating with high-fidelity motion</h2>
+        </div>
+        <p class="cs-body-p">
+          We built interactive prototypes to observe how users navigate multi-tier panels. High-fidelity motion helped validate spatial orientation, ensuring that expanding sidebars never disjointed the author's visual focus on the canvas.
+        </p>
+
+        <div class="cs-callout-card">
+          <h4>Reduced Cognitive Friction</h4>
+          <p>
+            During testing, 10 out of 12 participants completed complex multi-clause review workflows 52% faster than with existing enterprise software, citing the calm hierarchy and zero page refreshes.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 7: DESIGN DECISIONS -->
+      <section class="cs-section" id="decisions">
+        <span class="cs-section-kicker">Design Decisions</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">Crafting a calm, readable enterprise design system</h2>
+        </div>
+        <p class="cs-body-p">
+          Every typographic size, border weight, and surface shade was tuned to minimize eye fatigue during 8-hour continuous drafting sessions:
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; color: var(--cs-text-body); font-size: 1.05rem;">
+          <li><strong>Warm Paper Surfaces:</strong> Subtle off-white backgrounds (`#f9f9fb`) instead of harsh pure white to protect visual stamina.</li>
+          <li><strong>Terracotta Accent Markers:</strong> Intentional, restrained color accents (`#e05320`) guide eye-scanning to primary action triggers without visual noise.</li>
+          <li><strong>Progressive Disclosure:</strong> Secondary tools and metadata remain tucked in collapsible side drawers until summoned via quick keyboard shortcuts.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 8: REFLECTION & NEXT STEPS -->
+      <section class="cs-section" id="reflection">
+        <span class="cs-section-kicker">Reflection</span>
+        <div class="cs-heading-with-marker">
+          <h2 class="cs-section-heading">Looking ahead</h2>
+        </div>
+        <p class="cs-body-p">
+          Document Studio demonstrated that enterprise tools don't have to be clunky or bloated to be powerful. By pairing disciplined information architecture with high-craft frontend engineering, complex workflow applications can feel as calm and fluid as consumer software.
+        </p>
+
+        <!-- Bottom Navigation: Next Case Study -->
+        <nav class="cs-footer-nav" aria-label="Next Case Study">
+          <a href="../../index.html#projects" class="cs-footer-link">
+            <span class="cs-footer-sub">← Back</span>
+            <span class="cs-footer-title">All Selected Projects</span>
+          </a>
+          <a href="../icici-cib-banking-saas/index.html" class="cs-footer-link" style="text-align: right;">
+            <span class="cs-footer-sub">Next Case Study →</span>
+            <span class="cs-footer-title">ICICI Corporate Banking</span>
+          </a>
+        </nav>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../editorial-case-study.js"></script>
+</body>
+</html>
