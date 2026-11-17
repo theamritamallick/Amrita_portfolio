@@ -283,76 +283,35 @@ body.editorial-case-study {
   line-height: 1.4;
 }
 
-/* Metric Cards Strip (Directly Below Metadata) */
-.cs-metric-cards-grid {
+/* Metrics Metadata Strip (Clean UI matching metadata grid, No Cards) */
+.cs-metrics-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 20px 0 24px 0;
+  border-bottom: 1px solid var(--cs-border);
 }
 
-.cs-metric-card {
-  background: var(--cs-surface);
-  border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius-md);
-  padding: 20px 24px;
+.cs-metric-col {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  gap: 6px;
 }
 
-.cs-metric-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--cs-accent);
+.cs-metric-col .cs-meta-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cs-text-secondary);
+  letter-spacing: -0.01em;
 }
 
-.cs-metric-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  border-color: #d1d5db;
-}
-
-.cs-metric-val-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.cs-metric-value {
+.cs-metric-number {
   font-family: var(--font-serif);
   font-size: 2.35rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   color: var(--cs-text-main);
   letter-spacing: -0.02em;
-}
-
-.cs-metric-badge {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--cs-accent);
-  background: var(--cs-accent-bg);
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
-.cs-metric-label {
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--cs-text-secondary);
-  line-height: 1.4;
 }
 
 /* =========================================
@@ -687,13 +646,14 @@ body.editorial-case-study {
     gap: 16px;
   }
 
-  .cs-metric-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .cs-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 0 20px 0;
   }
 
-  .cs-metric-value {
-    font-size: 2rem;
+  .cs-metric-number {
+    font-size: 1.85rem;
   }
 
   .cs-heading-with-marker::before {
